@@ -512,7 +512,7 @@
     <li><a href="#about">خبراتنا</a></li>
     <li><a href="#faq">الأسئلة الشائعة</a></li>
   </ul>
-  <a href="https://wa.me/96877684008?text=مرحباً،%20أرغب%20في%20الاستفسار%20عن%20خدمات%20مبادر%20كوتشينج" target="_blank" class="nav-cta">تواصل معنا</a>
+  <a href="#" onclick="event.preventDefault();openWhatsApp('مرحباً، أرغب في الاستفسار عن خدمات مبادر كوتشينج')" class="nav-cta">تواصل معنا</a>
 </nav>
 
 <!-- HERO -->
@@ -533,7 +533,7 @@
           <span>ابدأ الآن</span>
           <i class="fa-solid fa-arrow-left"></i>
         </a>
-        <a href="https://wa.me/96877684008?text=مرحباً،%20أرغب%20في%20الاستفسار%20عن%20خدمات%20مبادر%20كوتشينج" target="_blank" class="btn-whatsapp">
+        <a href="#" onclick="event.preventDefault();openWhatsApp('مرحباً، أرغب في الاستفسار عن خدمات مبادر كوتشينج')" class="btn-whatsapp">
           <i class="fa-brands fa-whatsapp"></i>
           <span>تواصل عبر الواتساب</span>
         </a>
@@ -809,7 +809,7 @@
   <p>كل إنسان بداخله مشروع ينتظر قراراً. القرار الصحيح يبدأ بالخطوة الصحيحة.</p>
   <div class="final-cta-actions">
     <a href="#products" class="btn-primary">اختر الخدمة المناسبة لك <i class="fa-solid fa-arrow-left"></i></a>
-    <a href="https://wa.me/96877684008?text=مرحباً،%20أرغب%20في%20الاستفسار%20عن%20خدمات%20مبادر%20كوتشينج%20وأريد%20الحجز" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب</a>
+    <a href="#" onclick="event.preventDefault();openWhatsApp('مرحباً، أرغب في الاستفسار عن خدمات مبادر كوتشينج وأريد الحجز')" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب</a>
   </div>
 </section>
 
@@ -857,6 +857,21 @@
 
 <script>
 const WA_NUM = '96877684008';
+
+// Smart WhatsApp opener - works on both mobile and desktop
+function openWhatsApp(msg) {
+  const phone = '96877684008';
+  const encoded = encodeURIComponent(msg || '');
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  let url;
+  if (isMobile) {
+    url = 'https://wa.me/' + phone + (encoded ? '?text=' + encoded : '');
+  } else {
+    url = 'https://web.whatsapp.com/send?phone=' + phone + (encoded ? '&text=' + encoded : '');
+  }
+  window.open(url, '_blank');
+}
+
 
 function openWA(msg) {
   const encoded = encodeURIComponent(msg || '');
@@ -996,7 +1011,7 @@ function submitOrder(selected){
       <div class="success-title">تم استلام طلبك بنجاح!</div>
       <div class="success-desc">شكرًا لك ${name}! سيتواصل معك فريق مبادر كوتشينج خلال 24 ساعة لتأكيد الطلب وتفاصيل الجلسة.</div>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a href="${WA_BASE}${waMsg}" target="_blank" class="btn-whatsapp" style="text-decoration:none"><i class="fa-brands fa-whatsapp"></i> تواصل معنا الآن</a>
+        <a href="#" onclick="event.preventDefault();openWhatsApp('مرحباً، لقد أرسلت طلبًا. اسمي: '+ name +'، رقمي: '+ phone)" target="_blank" class="btn-whatsapp" style="text-decoration:none"><i class="fa-brands fa-whatsapp"></i> تواصل معنا الآن</a>
         <button onclick="closeOrder()" style="background:none;border:2px solid var(--gray-200);color:var(--navy);padding:12px 24px;border-radius:10px;font-family:var(--font);font-weight:600;cursor:pointer">إغلاق</button>
       </div>
     </div>
@@ -1050,7 +1065,7 @@ function renderProducts(){
         <div class="product-actions">
           <button class="btn-product-buy" onclick="openOrderForm('${p.id}')">${p.cta}</button>
           <button class="btn-cart-add" onclick="addToCart('${p.id}')">+ السلة</button>
-          <a href="https://wa.me/96877684008" target="_blank" class="btn-product-wa" id="wa-${p.id}"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" onclick="event.preventDefault();openWhatsApp('مرحباً، أرغب في الاستفسار عن خدمة: '+ p.name)" class="btn-product-wa" id="wa-${p.id}"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
