@@ -7,7 +7,8 @@
   <meta name="description" content="في مبادر كوتشينج نساعدك على اكتشاف المشروع الأنسب لك وبناء نموذج عمل قابل للتطبيق والنمو" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
       --navy: #0D1F3C;
@@ -24,7 +25,7 @@
       --gray-700: #374151;
       --text-main: #0D1F3C;
       --text-light: #6B7280;
-      --font: 'Tajawal', sans-serif;
+      --font: 'IBM Plex Sans Arabic', sans-serif;
       --radius: 16px;
       --shadow: 0 4px 24px rgba(13,31,60,0.10);
       --shadow-lg: 0 8px 40px rgba(13,31,60,0.16);
@@ -41,7 +42,7 @@
       overflow-x: hidden;
     }
 
-    /* ── NAVIGATION ── */
+    /* NAV */
     .nav {
       position: fixed; top: 0; right: 0; left: 0; z-index: 999;
       background: rgba(13,31,60,0.97);
@@ -57,16 +58,12 @@
       background: linear-gradient(135deg, var(--gold), var(--gold-light));
       border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 18px; font-weight: 900; color: var(--navy);
+      font-size: 18px; font-weight: 700; color: var(--navy);
     }
     .nav-logo-text { color: var(--white); font-size: 18px; font-weight: 700; }
     .nav-logo-text span { color: var(--gold); }
     .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a {
-      color: rgba(255,255,255,0.8); text-decoration: none;
-      font-size: 14px; font-weight: 500;
-      transition: color 0.2s;
-    }
+    .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
     .nav-cta {
       background: linear-gradient(135deg, var(--gold), var(--gold-light));
@@ -75,12 +72,8 @@
       transition: opacity 0.2s;
     }
     .nav-cta:hover { opacity: 0.9; }
-    .nav-mobile-toggle {
-      display: none; background: none; border: none; cursor: pointer;
-      color: var(--white); font-size: 22px;
-    }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       min-height: 100vh;
       background: var(--navy);
@@ -91,14 +84,14 @@
     .hero-bg-pattern {
       position: absolute; inset: 0;
       background-image:
-        radial-gradient(circle at 20% 50%, rgba(201,168,76,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 20% 50%, rgba(201,168,76,0.07) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(30,58,110,0.6) 0%, transparent 50%);
     }
     .hero-grid-lines {
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
       background-size: 60px 60px;
     }
     .hero-inner {
@@ -113,27 +106,22 @@
       color: var(--gold); font-size: 13px; font-weight: 600;
       margin-bottom: 24px;
     }
-    .hero-eyebrow::before { content: '✦'; font-size: 10px; }
     .hero-title {
       font-size: clamp(28px, 4vw, 48px);
-      font-weight: 900; color: var(--white);
-      line-height: 1.3; margin-bottom: 20px;
+      font-weight: 700; color: var(--white);
+      line-height: 1.35; margin-bottom: 20px;
     }
-    .hero-title .highlight {
-      color: var(--gold);
-      position: relative;
-    }
+    .hero-title .highlight { color: var(--gold); }
     .hero-desc {
       color: rgba(255,255,255,0.75);
       font-size: clamp(15px, 1.8vw, 17px);
-      line-height: 1.9; margin-bottom: 36px;
-      font-weight: 400;
+      line-height: 1.9; margin-bottom: 36px; font-weight: 400;
     }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
     .btn-primary {
       background: linear-gradient(135deg, var(--gold), var(--gold-light));
       color: var(--navy); padding: 14px 32px; border-radius: 10px;
-      font-weight: 800; font-size: 15px; text-decoration: none;
+      font-weight: 700; font-size: 15px; text-decoration: none;
       display: inline-flex; align-items: center; gap: 8px;
       transition: transform 0.2s, box-shadow 0.2s;
       box-shadow: 0 4px 20px rgba(201,168,76,0.3);
@@ -156,141 +144,107 @@
       transition: all 0.2s;
     }
     .btn-outline:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); }
-
     .hero-trust { display: flex; gap: 28px; flex-wrap: wrap; }
-    .trust-item {
-      display: flex; align-items: center; gap: 8px;
-      color: rgba(255,255,255,0.65); font-size: 13px;
-    }
-    .trust-item .dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--gold); flex-shrink: 0;
-    }
-    .hero-visual {
-      display: flex; justify-content: center; align-items: center;
-    }
+    .trust-item { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.65); font-size: 13px; }
+    .trust-item .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .hero-visual { display: flex; justify-content: center; align-items: center; }
     .hero-card-stack { position: relative; width: 340px; height: 380px; }
     .hero-card {
       position: absolute;
       background: rgba(255,255,255,0.07);
       border: 1px solid rgba(201,168,76,0.2);
-      border-radius: 20px;
-      padding: 28px;
+      border-radius: 20px; padding: 28px;
       backdrop-filter: blur(10px);
     }
-    .hero-card-main {
-      width: 300px; top: 40px; right: 20px; z-index: 3;
-      background: rgba(255,255,255,0.09);
-    }
-    .hero-card-back1 {
-      width: 280px; top: 20px; right: 30px; z-index: 2;
-      transform: rotate(3deg);
-    }
-    .hero-card-back2 {
-      width: 280px; top: 10px; right: 10px; z-index: 1;
-      transform: rotate(-2deg);
-    }
-    .card-label { color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-bottom: 12px; }
+    .hero-card-main { width: 300px; top: 40px; right: 20px; z-index: 3; background: rgba(255,255,255,0.09); }
+    .hero-card-back1 { width: 280px; top: 20px; right: 30px; z-index: 2; transform: rotate(3deg); }
+    .hero-card-back2 { width: 280px; top: 10px; right: 10px; z-index: 1; transform: rotate(-2deg); }
+    .card-label { color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 1px; margin-bottom: 12px; }
     .card-title { color: var(--white); font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .card-number { font-size: 42px; font-weight: 700; color: var(--gold); line-height: 1; margin: 16px 0 4px; }
     .card-stat { color: rgba(255,255,255,0.6); font-size: 13px; }
-    .card-number {
-      font-size: 42px; font-weight: 900; color: var(--gold);
-      line-height: 1; margin: 16px 0 4px;
-    }
-    .card-icon-row {
-      display: flex; gap: 8px; margin-top: 16px;
-    }
+    .card-icon-row { display: flex; gap: 8px; margin-top: 16px; }
     .card-pill {
       background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.25);
       border-radius: 100px; padding: 4px 12px;
       color: var(--gold-light); font-size: 11px; font-weight: 600;
     }
 
-    /* ── SECTION SHARED ── */
+    /* SECTION SHARED */
     .section { padding: 90px 5%; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
     .section-eyebrow {
-      text-align: center; color: var(--gold); font-size: 13px;
-      font-weight: 700; letter-spacing: 2px; margin-bottom: 12px;
-      text-transform: uppercase;
+      text-align: center; color: var(--gold); font-size: 12px;
+      font-weight: 600; letter-spacing: 2px; margin-bottom: 12px; text-transform: uppercase;
     }
     .section-title {
-      text-align: center; font-size: clamp(24px, 3vw, 38px);
-      font-weight: 900; color: var(--navy);
+      text-align: center; font-size: clamp(22px, 3vw, 36px);
+      font-weight: 700; color: var(--navy);
       line-height: 1.35; margin-bottom: 16px;
     }
     .section-subtitle {
       text-align: center; color: var(--text-light);
-      font-size: 16px; max-width: 600px; margin: 0 auto 56px;
-      line-height: 1.8;
+      font-size: 16px; max-width: 600px; margin: 0 auto 56px; line-height: 1.8;
     }
 
-    /* ── PROBLEM ── */
+    /* PROBLEM */
     .problem-section { background: var(--gray-50); }
-    .problems-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
+    .problems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
     .problem-card {
-      background: var(--white); border-radius: var(--radius);
-      padding: 28px; border: 1px solid var(--gray-100);
-      border-right: 4px solid var(--gold);
+      background: var(--white); border-radius: 14px;
+      padding: 24px 24px 24px 20px;
+      border: 1px solid var(--gray-100);
+      border-right: 3px solid var(--gold);
       transition: box-shadow 0.2s, transform 0.2s;
+      display: flex; align-items: flex-start; gap: 16px;
     }
-    .problem-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
-    .problem-icon { font-size: 28px; margin-bottom: 12px; }
+    .problem-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+    .problem-icon-wrap {
+      width: 40px; height: 40px; border-radius: 10px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .problem-icon-wrap i { color: var(--gold); font-size: 16px; }
     .problem-text { color: var(--gray-700); font-size: 15px; line-height: 1.7; font-weight: 500; }
 
-    /* ── SOLUTION ── */
+    /* SOLUTION */
     .solution-section { background: var(--white); }
-    .solution-center {
-      text-align: center; max-width: 750px; margin: 0 auto 60px;
-    }
     .solution-big-q {
       background: linear-gradient(135deg, var(--navy), var(--navy-mid));
       border-radius: 20px; padding: 48px;
       margin-bottom: 48px;
       position: relative; overflow: hidden;
+      text-align: center;
     }
     .solution-big-q::before {
       content: '؟';
       position: absolute; right: -20px; bottom: -30px;
-      font-size: 200px; color: rgba(201,168,76,0.08);
-      font-weight: 900; line-height: 1;
+      font-size: 200px; color: rgba(201,168,76,0.06);
+      font-weight: 700; line-height: 1;
     }
-    .solution-big-q h3 {
-      color: rgba(255,255,255,0.6); font-size: 16px; font-weight: 500;
-      margin-bottom: 8px;
-    }
-    .solution-big-q h2 {
-      color: var(--gold); font-size: clamp(22px, 3vw, 36px);
-      font-weight: 900; line-height: 1.4;
-    }
-    .solution-points {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-    }
+    .solution-big-q h3 { color: rgba(255,255,255,0.55); font-size: 15px; font-weight: 400; margin-bottom: 12px; }
+    .solution-big-q h2 { color: var(--gold); font-size: clamp(20px, 3vw, 34px); font-weight: 700; line-height: 1.4; }
+    .solution-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
     .solution-point {
       display: flex; align-items: flex-start; gap: 12px;
-      background: var(--gray-50); border-radius: 12px; padding: 18px;
+      background: var(--gray-50); border-radius: 12px; padding: 16px;
     }
     .solution-point-icon {
       width: 36px; height: 36px; border-radius: 10px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      background: var(--navy);
       display: flex; align-items: center; justify-content: center;
-      font-size: 16px; flex-shrink: 0;
+      flex-shrink: 0;
     }
-    .solution-point-text { font-size: 14px; font-weight: 600; color: var(--navy); }
+    .solution-point-icon i { color: var(--gold); font-size: 15px; }
+    .solution-point-text { font-size: 14px; font-weight: 600; color: var(--navy); padding-top: 6px; }
 
-    /* ── PRODUCTS ── */
+    /* PRODUCTS */
     .products-section { background: var(--navy); padding: 90px 5%; }
     .products-section .section-title { color: var(--white); }
     .products-section .section-subtitle { color: rgba(255,255,255,0.6); }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 28px;
-    }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
     .product-card {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(201,168,76,0.2);
@@ -299,231 +253,153 @@
       transition: transform 0.2s, box-shadow 0.2s;
       display: flex; flex-direction: column;
     }
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 50px rgba(0,0,0,0.3);
-      border-color: rgba(201,168,76,0.4);
-    }
-    .product-card.featured {
-      border-color: var(--gold);
-      background: rgba(201,168,76,0.08);
-    }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(0,0,0,0.3); border-color: rgba(201,168,76,0.4); }
+    .product-card.featured { border-color: var(--gold); background: rgba(201,168,76,0.07); }
     .product-badge {
       position: absolute; top: 20px; left: 20px;
       background: var(--gold); color: var(--navy);
-      font-size: 11px; font-weight: 800; padding: 4px 12px;
-      border-radius: 100px; letter-spacing: 0.5px;
+      font-size: 11px; font-weight: 700; padding: 4px 12px;
+      border-radius: 100px;
     }
-    .product-number {
-      color: rgba(201,168,76,0.3); font-size: 52px;
-      font-weight: 900; line-height: 1; margin-bottom: 16px;
-    }
-    .product-name {
-      color: var(--white); font-size: 20px; font-weight: 800;
-      line-height: 1.4; margin-bottom: 12px;
-    }
-    .product-desc {
-      color: rgba(255,255,255,0.65); font-size: 14px;
-      line-height: 1.8; margin-bottom: 20px;
-    }
-    .product-for {
-      display: flex; align-items: center; gap: 8px;
-      color: var(--gold); font-size: 13px; font-weight: 600;
-      margin-bottom: 20px;
-    }
+    .product-number { color: rgba(201,168,76,0.25); font-size: 52px; font-weight: 700; line-height: 1; margin-bottom: 16px; }
+    .product-name { color: var(--white); font-size: 19px; font-weight: 700; line-height: 1.4; margin-bottom: 12px; }
+    .product-desc { color: rgba(255,255,255,0.65); font-size: 14px; line-height: 1.8; margin-bottom: 20px; }
+    .product-for { display: flex; align-items: center; gap: 8px; color: var(--gold); font-size: 13px; font-weight: 600; margin-bottom: 20px; }
+    .product-for i { font-size: 14px; }
     .product-outputs { margin-bottom: 24px; }
-    .product-outputs-title {
-      color: rgba(255,255,255,0.5); font-size: 11px;
-      font-weight: 700; letter-spacing: 1px; margin-bottom: 12px;
-    }
-    .product-output-item {
-      display: flex; align-items: flex-start; gap: 8px;
-      color: rgba(255,255,255,0.75); font-size: 13px;
-      margin-bottom: 7px; line-height: 1.5;
-    }
-    .product-output-item::before {
-      content: '✓'; color: var(--gold); font-weight: 700;
-      flex-shrink: 0; margin-top: 1px;
-    }
-    .product-price-row {
-      margin-top: auto; padding-top: 24px;
-      border-top: 1px solid rgba(201,168,76,0.15);
-    }
-    .product-price {
-      color: var(--gold); font-size: 28px; font-weight: 900;
-      margin-bottom: 16px; display: block;
-    }
-    .product-price small { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.5); }
+    .product-outputs-title { color: rgba(255,255,255,0.4); font-size: 11px; font-weight: 600; letter-spacing: 1px; margin-bottom: 12px; }
+    .product-output-item { display: flex; align-items: flex-start; gap: 8px; color: rgba(255,255,255,0.75); font-size: 13px; margin-bottom: 7px; line-height: 1.5; }
+    .product-output-item i { color: var(--gold); font-size: 12px; flex-shrink: 0; margin-top: 3px; }
+    .product-price-row { margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(201,168,76,0.15); }
+    .product-price { color: var(--gold); font-size: 26px; font-weight: 700; margin-bottom: 16px; display: block; }
     .product-actions { display: flex; gap: 10px; flex-wrap: wrap; }
     .btn-product-buy {
       flex: 1; background: linear-gradient(135deg, var(--gold), var(--gold-light));
       color: var(--navy); padding: 12px 16px;
-      border-radius: 10px; font-weight: 800; font-size: 14px;
-      border: none; cursor: pointer; transition: all 0.2s;
-      text-align: center;
+      border-radius: 10px; font-weight: 700; font-size: 14px;
+      border: none; cursor: pointer; transition: all 0.2s; text-align: center;
+      font-family: var(--font);
     }
     .btn-product-buy:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,168,76,0.4); }
     .btn-product-wa {
-      width: 46px; height: 46px; background: rgba(37,211,102,0.15);
+      width: 46px; height: 46px; background: rgba(37,211,102,0.12);
       border: 1px solid rgba(37,211,102,0.3);
       border-radius: 10px; display: flex; align-items: center; justify-content: center;
-      color: #25D366; font-size: 20px; cursor: pointer;
+      color: #25D366; font-size: 18px; cursor: pointer;
       transition: all 0.2s; text-decoration: none; flex-shrink: 0;
     }
-    .btn-product-wa:hover { background: rgba(37,211,102,0.25); }
+    .btn-product-wa:hover { background: rgba(37,211,102,0.22); }
     .btn-cart-add {
       flex: 1; background: transparent;
-      border: 1px solid rgba(201,168,76,0.4);
+      border: 1px solid rgba(201,168,76,0.35);
       color: var(--gold); padding: 12px 16px;
-      border-radius: 10px; font-weight: 700; font-size: 13px;
-      cursor: pointer; transition: all 0.2s;
+      border-radius: 10px; font-weight: 600; font-size: 13px;
+      cursor: pointer; transition: all 0.2s; font-family: var(--font);
     }
     .btn-cart-add:hover { background: rgba(201,168,76,0.1); }
 
-    /* ── METHODOLOGY ── */
+    /* METHODOLOGY */
     .method-section { background: var(--gray-50); }
-    .method-steps {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0; position: relative;
-    }
-    .method-step {
-      padding: 36px 24px;
-      text-align: center;
-      position: relative;
-    }
+    .method-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0; position: relative; }
+    .method-step { padding: 32px 20px; text-align: center; position: relative; }
     .method-step:not(:last-child)::after {
       content: '←';
-      position: absolute; top: 48px; left: -12px;
-      color: var(--gold); font-size: 20px; z-index: 2;
+      position: absolute; top: 44px; left: -10px;
+      color: var(--gold); font-size: 18px; z-index: 2;
     }
     .step-num {
-      width: 56px; height: 56px; border-radius: 50%;
+      width: 54px; height: 54px; border-radius: 50%;
       background: linear-gradient(135deg, var(--navy), var(--navy-mid));
       border: 2px solid var(--gold);
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 16px;
-      color: var(--gold); font-size: 20px; font-weight: 900;
+      margin: 0 auto 14px;
+      color: var(--gold); font-size: 18px; font-weight: 700;
     }
-    .step-title { color: var(--navy); font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+    .step-title { color: var(--navy); font-size: 15px; font-weight: 700; margin-bottom: 8px; }
     .step-desc { color: var(--text-light); font-size: 13px; line-height: 1.7; }
 
-    /* ── STATS ── */
+    /* STATS */
     .stats-section { background: var(--navy); }
-    .stats-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
-    .stats-header h2 { color: var(--white); font-size: clamp(22px, 2.5vw, 32px); font-weight: 900; margin-bottom: 16px; }
-    .stats-header p { color: rgba(255,255,255,0.65); font-size: 15px; line-height: 1.8; }
-    .stats-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
+    .stats-header { text-align: center; max-width: 700px; margin: 0 auto 56px; }
+    .stats-header h2 { color: var(--white); font-size: clamp(20px, 2.5vw, 30px); font-weight: 700; margin-bottom: 16px; }
+    .stats-header p { color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.8; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; }
     .stat-card {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(201,168,76,0.15);
-      border-radius: 16px; padding: 32px 24px; text-align: center;
+      border-radius: 16px; padding: 28px 20px; text-align: center;
       transition: transform 0.2s;
     }
-    .stat-card:hover { transform: translateY(-4px); border-color: rgba(201,168,76,0.4); }
-    .stat-icon { font-size: 32px; margin-bottom: 16px; }
-    .stat-number {
-      color: var(--gold); font-size: 40px; font-weight: 900;
-      line-height: 1; margin-bottom: 8px;
-      display: flex; align-items: baseline; justify-content: center; gap: 2px;
-    }
-    .stat-number .plus { font-size: 24px; }
-    .stat-label { color: rgba(255,255,255,0.75); font-size: 14px; font-weight: 600; }
+    .stat-card:hover { transform: translateY(-4px); border-color: rgba(201,168,76,0.35); }
+    .stat-icon { margin-bottom: 14px; }
+    .stat-icon i { color: var(--gold); font-size: 28px; }
+    .stat-number { color: var(--gold); font-size: 38px; font-weight: 700; line-height: 1; margin-bottom: 8px; display: flex; align-items: baseline; justify-content: center; gap: 1px; }
+    .stat-number .plus { font-size: 22px; }
+    .stat-label { color: rgba(255,255,255,0.7); font-size: 13px; font-weight: 500; }
 
-    /* ── WHY ── */
+    /* WHY */
     .why-section { background: var(--white); }
-    .why-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
     .why-card {
       display: flex; gap: 16px; align-items: flex-start;
-      padding: 24px; border-radius: 14px;
+      padding: 22px; border-radius: 14px;
       border: 1px solid var(--gray-100);
       transition: box-shadow 0.2s;
     }
     .why-card:hover { box-shadow: var(--shadow); }
     .why-icon {
-      width: 48px; height: 48px; border-radius: 12px;
-      background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05));
-      border: 1px solid rgba(201,168,76,0.2);
+      width: 46px; height: 46px; border-radius: 12px;
+      background: rgba(13,31,60,0.06);
+      border: 1px solid rgba(13,31,60,0.1);
       display: flex; align-items: center; justify-content: center;
-      font-size: 20px; flex-shrink: 0;
+      flex-shrink: 0;
     }
+    .why-icon i { color: var(--navy); font-size: 18px; }
     .why-text h4 { color: var(--navy); font-size: 15px; font-weight: 700; margin-bottom: 6px; }
     .why-text p { color: var(--text-light); font-size: 13px; line-height: 1.7; }
 
-    /* ── TESTIMONIALS ── */
+    /* TESTIMONIALS */
     .testimonials-section { background: var(--gray-50); }
-    .testimonials-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
     .testimonial-card {
       background: var(--white); border-radius: 16px;
-      padding: 32px; border: 1px solid var(--gray-100);
-      box-shadow: var(--shadow);
-      position: relative;
+      padding: 28px; border: 1px solid var(--gray-100);
+      box-shadow: var(--shadow); position: relative;
     }
     .testimonial-card::before {
       content: '"';
-      position: absolute; top: 20px; left: 28px;
-      font-size: 80px; color: var(--gold); opacity: 0.15;
+      position: absolute; top: 16px; left: 24px;
+      font-size: 72px; color: var(--gold); opacity: 0.12;
       font-family: serif; line-height: 1;
     }
-    .testimonial-text {
-      color: var(--gray-700); font-size: 15px;
-      line-height: 1.85; margin-bottom: 24px;
-      font-weight: 500;
-    }
+    .testimonial-text { color: var(--gray-700); font-size: 15px; line-height: 1.85; margin-bottom: 20px; font-weight: 400; }
     .testimonial-author { display: flex; align-items: center; gap: 12px; }
     .author-avatar {
-      width: 44px; height: 44px; border-radius: 50%;
+      width: 42px; height: 42px; border-radius: 50%;
       background: linear-gradient(135deg, var(--navy), var(--navy-mid));
       display: flex; align-items: center; justify-content: center;
-      color: var(--gold); font-weight: 700; font-size: 16px;
-      flex-shrink: 0;
+      color: var(--gold); font-weight: 700; font-size: 15px; flex-shrink: 0;
     }
     .author-info .name { color: var(--navy); font-weight: 700; font-size: 14px; }
     .author-info .role { color: var(--text-light); font-size: 12px; }
-    .stars { color: var(--gold); font-size: 14px; margin-bottom: 14px; }
+    .stars { color: var(--gold); font-size: 13px; margin-bottom: 12px; }
 
-    /* ── FAQ ── */
+    /* FAQ */
     .faq-section { background: var(--white); }
     .faq-list { max-width: 800px; margin: 0 auto; }
-    .faq-item {
-      border: 1px solid var(--gray-100);
-      border-radius: 12px; margin-bottom: 12px;
-      overflow: hidden;
-      transition: box-shadow 0.2s;
-    }
-    .faq-item.open { box-shadow: var(--shadow); border-color: var(--gold); }
-    .faq-q {
-      padding: 20px 24px;
-      display: flex; justify-content: space-between; align-items: center;
-      cursor: pointer; gap: 16px;
-      color: var(--navy); font-weight: 700; font-size: 15px;
-      transition: background 0.2s;
-    }
+    .faq-item { border: 1px solid var(--gray-100); border-radius: 12px; margin-bottom: 10px; overflow: hidden; transition: box-shadow 0.2s; }
+    .faq-item.open { box-shadow: var(--shadow); border-color: rgba(201,168,76,0.4); }
+    .faq-q { padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; gap: 16px; color: var(--navy); font-weight: 600; font-size: 15px; transition: background 0.2s; }
     .faq-q:hover { background: var(--gray-50); }
-    .faq-icon {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: var(--gray-100); display: flex; align-items: center; justify-content: center;
-      font-size: 16px; flex-shrink: 0;
-      transition: transform 0.3s, background 0.2s;
-    }
-    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--gold); color: var(--navy); }
-    .faq-a {
-      max-height: 0; overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.35s;
-      padding: 0 24px;
-    }
-    .faq-a-inner { padding-bottom: 20px; color: var(--gray-700); font-size: 14px; line-height: 1.85; }
+    .faq-icon { width: 26px; height: 26px; border-radius: 50%; background: var(--gray-100); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: transform 0.3s, background 0.2s; }
+    .faq-icon i { font-size: 12px; color: var(--navy); }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--gold); }
+    .faq-item.open .faq-icon i { color: var(--navy); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s; padding: 0 22px; }
+    .faq-a-inner { padding-bottom: 18px; color: var(--gray-700); font-size: 14px; line-height: 1.85; }
     .faq-item.open .faq-a { max-height: 300px; }
 
-    /* ── FINAL CTA ── */
+    /* FINAL CTA */
     .final-cta {
       background: linear-gradient(135deg, var(--navy), var(--navy-mid));
       padding: 100px 5%; text-align: center; position: relative; overflow: hidden;
@@ -531,42 +407,34 @@
     .final-cta::before {
       content: '';
       position: absolute; inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(201,168,76,0.1) 0%, transparent 70%);
+      background: radial-gradient(circle at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 70%);
     }
-    .final-cta h2 {
-      color: var(--white); font-size: clamp(26px, 3.5vw, 44px);
-      font-weight: 900; line-height: 1.35; margin-bottom: 16px;
-      position: relative;
-    }
+    .final-cta h2 { color: var(--white); font-size: clamp(24px, 3.5vw, 42px); font-weight: 700; line-height: 1.35; margin-bottom: 16px; position: relative; }
     .final-cta h2 span { color: var(--gold); }
-    .final-cta p {
-      color: rgba(255,255,255,0.7); font-size: 16px;
-      max-width: 560px; margin: 0 auto 40px;
-      line-height: 1.8; position: relative;
-    }
+    .final-cta p { color: rgba(255,255,255,0.65); font-size: 16px; max-width: 540px; margin: 0 auto 40px; line-height: 1.8; position: relative; }
     .final-cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
 
-    /* ── FOOTER ── */
+    /* FOOTER */
     footer {
-      background: var(--navy); color: rgba(255,255,255,0.6);
+      background: var(--navy); color: rgba(255,255,255,0.55);
       padding: 48px 5%; text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid rgba(255,255,255,0.07);
     }
-    footer .footer-logo { color: var(--white); font-size: 20px; font-weight: 800; margin-bottom: 12px; }
+    footer .footer-logo { color: var(--white); font-size: 20px; font-weight: 700; margin-bottom: 10px; }
     footer .footer-logo span { color: var(--gold); }
-    footer .footer-slogan { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 24px; }
+    footer .footer-slogan { font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 24px; }
     footer .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
-    footer .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 13px; }
+    footer .footer-links a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 13px; }
     footer .footer-links a:hover { color: var(--gold); }
-    footer .footer-copy { font-size: 12px; color: rgba(255,255,255,0.35); }
+    footer .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
 
-    /* ── CART ── */
+    /* CART FAB */
     .cart-fab {
       position: fixed; bottom: 30px; left: 30px; z-index: 998;
       background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: var(--navy); width: 58px; height: 58px;
+      color: var(--navy); width: 56px; height: 56px;
       border-radius: 50%; border: none; cursor: pointer;
-      font-size: 22px; box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+      font-size: 20px; box-shadow: 0 4px 20px rgba(201,168,76,0.4);
       display: flex; align-items: center; justify-content: center;
       transition: transform 0.2s;
     }
@@ -575,103 +443,46 @@
       position: absolute; top: -4px; right: -4px;
       background: #EF4444; color: white; width: 20px; height: 20px;
       border-radius: 50%; font-size: 11px; font-weight: 700;
-      display: flex; align-items: center; justify-content: center;
-      display: none;
+      display: none; align-items: center; justify-content: center;
     }
     .cart-badge.visible { display: flex; }
 
-    /* ── OVERLAY MODAL ── */
-    .overlay {
-      position: fixed; inset: 0; z-index: 1200;
-      background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
-      display: none; align-items: center; justify-content: center;
-      padding: 20px;
-    }
+    /* MODALS */
+    .overlay { position: fixed; inset: 0; z-index: 1200; background: rgba(0,0,0,0.55); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; padding: 20px; }
     .overlay.open { display: flex; }
-    .modal {
-      background: var(--white); border-radius: 20px;
-      width: 100%; max-width: 520px; max-height: 90vh;
-      overflow-y: auto;
-    }
-    .modal-header {
-      padding: 24px 28px; border-bottom: 1px solid var(--gray-100);
-      display: flex; align-items: center; justify-content: space-between;
-      position: sticky; top: 0; background: var(--white); z-index: 2;
-    }
-    .modal-title { font-size: 18px; font-weight: 800; color: var(--navy); }
-    .modal-close {
-      width: 34px; height: 34px; border-radius: 50%;
-      background: var(--gray-100); border: none; cursor: pointer;
-      font-size: 16px; display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s;
-    }
+    .modal { background: var(--white); border-radius: 20px; width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto; }
+    .modal-header { padding: 22px 26px; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: var(--white); z-index: 2; }
+    .modal-title { font-size: 17px; font-weight: 700; color: var(--navy); }
+    .modal-close { width: 32px; height: 32px; border-radius: 50%; background: var(--gray-100); border: none; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
     .modal-close:hover { background: var(--gray-300); }
-    .modal-body { padding: 24px 28px; }
-
-    /* Cart modal */
-    .cart-items { margin-bottom: 20px; }
-    .cart-item {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 16px; background: var(--gray-50); border-radius: 10px;
-      margin-bottom: 10px; gap: 12px;
-    }
+    .modal-body { padding: 22px 26px; }
+    .cart-item { display: flex; align-items: center; justify-content: space-between; padding: 14px; background: var(--gray-50); border-radius: 10px; margin-bottom: 10px; gap: 12px; }
     .cart-item-name { font-weight: 700; font-size: 14px; color: var(--navy); flex: 1; }
-    .cart-item-price { color: var(--gold); font-weight: 800; font-size: 15px; white-space: nowrap; }
-    .cart-item-remove {
-      background: none; border: none; cursor: pointer;
-      color: #EF4444; font-size: 18px; padding: 4px; transition: opacity 0.2s;
-    }
-    .cart-item-remove:hover { opacity: 0.7; }
-    .cart-total {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 16px; background: var(--navy); border-radius: 10px;
-      color: var(--white); font-weight: 700; margin-bottom: 20px;
-    }
-    .cart-total-amount { color: var(--gold); font-size: 20px; font-weight: 900; }
+    .cart-item-price { color: var(--gold); font-weight: 700; font-size: 14px; white-space: nowrap; }
+    .cart-item-remove { background: none; border: none; cursor: pointer; color: #EF4444; font-size: 16px; padding: 4px; }
+    .cart-total { display: flex; justify-content: space-between; align-items: center; padding: 14px; background: var(--navy); border-radius: 10px; color: var(--white); font-weight: 700; margin-bottom: 16px; }
+    .cart-total-amount { color: var(--gold); font-size: 18px; font-weight: 700; }
     .cart-empty { text-align: center; padding: 40px; color: var(--text-light); }
-    .cart-empty-icon { font-size: 48px; margin-bottom: 12px; }
-
-    /* Order form */
-    .form-group { margin-bottom: 18px; }
-    .form-label { display: block; color: var(--navy); font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+    .form-group { margin-bottom: 16px; }
+    .form-label { display: block; color: var(--navy); font-weight: 600; font-size: 13px; margin-bottom: 5px; }
     .form-label .req { color: var(--gold); }
-    .form-input {
-      width: 100%; padding: 12px 16px;
-      border: 2px solid var(--gray-100); border-radius: 10px;
-      font-family: var(--font); font-size: 14px; color: var(--navy);
-      transition: border-color 0.2s; outline: none;
-      background: var(--white);
-    }
+    .form-input { width: 100%; padding: 11px 14px; border: 2px solid var(--gray-100); border-radius: 10px; font-family: var(--font); font-size: 14px; color: var(--navy); transition: border-color 0.2s; outline: none; background: var(--white); }
     .form-input:focus { border-color: var(--gold); }
-    .form-input::placeholder { color: var(--gray-300); }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .form-product-tag {
-      background: rgba(13,31,60,0.06); border-radius: 8px; padding: 10px 14px;
-      font-size: 13px; font-weight: 600; color: var(--navy);
-      margin-bottom: 18px; border: 1px dashed var(--gray-300);
-    }
-    .submit-btn {
-      width: 100%; padding: 15px;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: var(--navy); border: none; border-radius: 12px;
-      font-family: var(--font); font-weight: 800; font-size: 16px;
-      cursor: pointer; transition: all 0.2s;
-    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-product-tag { background: rgba(13,31,60,0.05); border-radius: 8px; padding: 10px 14px; font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 16px; border: 1px dashed var(--gray-300); }
+    .submit-btn { width: 100%; padding: 14px; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy); border: none; border-radius: 12px; font-family: var(--font); font-weight: 700; font-size: 15px; cursor: pointer; transition: all 0.2s; }
     .submit-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,168,76,0.4); }
     .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .success-state { text-align: center; padding: 16px 0; }
+    .success-icon { font-size: 56px; margin-bottom: 14px; }
+    .success-title { color: var(--navy); font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .success-desc { color: var(--text-light); font-size: 14px; line-height: 1.7; margin-bottom: 22px; }
 
-    /* Success state */
-    .success-state { text-align: center; padding: 20px 0; }
-    .success-icon { font-size: 60px; margin-bottom: 16px; }
-    .success-title { color: var(--navy); font-size: 22px; font-weight: 900; margin-bottom: 8px; }
-    .success-desc { color: var(--text-light); font-size: 14px; line-height: 1.7; margin-bottom: 24px; }
-
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
       .hero-visual { display: none; }
       .nav-links { display: none; }
-      .nav-mobile-toggle { display: block; }
       .method-step:not(:last-child)::after { display: none; }
     }
     @media (max-width: 600px) {
@@ -682,13 +493,9 @@
       .btn-primary, .btn-whatsapp { text-align: center; justify-content: center; }
       .final-cta-actions { flex-direction: column; align-items: center; }
     }
-
-    /* ── SCROLL ANIMATIONS ── */
-    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
     .fade-in.visible { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) {
-      .fade-in { opacity: 1; transform: none; }
-    }
+    @media (prefers-reduced-motion: reduce) { .fade-in { opacity: 1; transform: none; } }
   </style>
 </head>
 <body>
@@ -705,8 +512,7 @@
     <li><a href="#about">خبراتنا</a></li>
     <li><a href="#faq">الأسئلة الشائعة</a></li>
   </ul>
-  <a href="https://wa.me/96877684008?text=مرحبًا%2C%20أرغب%20في%20الاستفسار%20عن%20خدمات%20مبادر%20كوتشينج" target="_blank" class="nav-cta">تواصل معنا</a>
-  <button class="nav-mobile-toggle" onclick="this.textContent = this.textContent === '☰' ? '✕' : '☰'; document.querySelector('.nav-links').style.display = document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex'">☰</button>
+  <a href="https://wa.me/96877684008?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%85%D8%A8%D8%A7%D8%AF%D8%B1%20%D9%83%D9%88%D8%AA%D8%B4%D9%8A%D9%86%D8%AC" target="_blank" class="nav-cta">تواصل معنا</a>
 </nav>
 
 <!-- HERO -->
@@ -725,10 +531,10 @@
       <div class="hero-actions">
         <a href="#products" class="btn-primary">
           <span>ابدأ الآن</span>
-          <span>←</span>
+          <i class="fa-solid fa-arrow-left"></i>
         </a>
-        <a href="https://wa.me/96877684008?text=مرحبًا%2C%20أرغب%20في%20الاستفسار%20عن%20خدمات%20مبادر%20كوتشينج" target="_blank" class="btn-whatsapp">
-          <span>💬</span>
+        <a href="https://wa.me/96877684008?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%85%D8%A8%D8%A7%D8%AF%D8%B1%20%D9%83%D9%88%D8%AA%D8%B4%D9%8A%D9%86%D8%AC" target="_blank" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
           <span>تواصل عبر الواتساب</span>
         </a>
       </div>
@@ -766,31 +572,31 @@
     <p class="section-subtitle">أنت لست وحدك. هذه الأسئلة تراود الكثيرين قبل أن يبدأوا مشروعهم.</p>
     <div class="problems-grid fade-in">
       <div class="problem-card">
-        <div class="problem-icon">💡</div>
+        <div class="problem-icon-wrap"><i class="fa-solid fa-lightbulb"></i></div>
         <div class="problem-text">لديّ مهارة لكن لا أعرف كيف أحولها إلى مشروع</div>
       </div>
       <div class="problem-card">
-        <div class="problem-icon">🤔</div>
+        <div class="problem-icon-wrap"><i class="fa-solid fa-circle-question"></i></div>
         <div class="problem-text">لديّ فكرة لكن لا أعرف هل تصلح أم لا</div>
       </div>
       <div class="problem-card">
-        <div class="problem-icon">😰</div>
-        <div class="problem-text">أخاف أن أبدأ ثم أفشل</div>
+        <div class="problem-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="problem-text">أخاف أن أبدأ ثم أفشل وأخسر وقتي ومالي</div>
       </div>
       <div class="problem-card">
-        <div class="problem-icon">🎯</div>
+        <div class="problem-icon-wrap"><i class="fa-solid fa-users"></i></div>
         <div class="problem-text">لا أعرف من هو عميلي المثالي</div>
       </div>
       <div class="problem-card">
-        <div class="problem-icon">💰</div>
+        <div class="problem-icon-wrap"><i class="fa-solid fa-tag"></i></div>
         <div class="problem-text">لا أعرف كيف أسعّر خدمتي بشكل صحيح</div>
       </div>
       <div class="problem-card">
-        <div class="problem-icon">🗺️</div>
+        <div class="problem-icon-wrap"><i class="fa-solid fa-route"></i></div>
         <div class="problem-text">أحتاج خطة بداية واقعية وليست كلامًا عامًا</div>
       </div>
       <div class="problem-card">
-        <div class="problem-icon">🏗️</div>
+        <div class="problem-icon-wrap"><i class="fa-solid fa-diagram-project"></i></div>
         <div class="problem-text">لا أعرف كيف أبني نموذج عمل واضح</div>
       </div>
     </div>
@@ -805,35 +611,35 @@
     <p class="section-subtitle">لا نبدأ بالسؤال التقليدي "ما المشروع الذي تريد تنفيذه؟" بل نبدأ بـ:</p>
     <div class="solution-big-q fade-in">
       <h3>السؤال الأهم الذي يغيّر كل شيء</h3>
-      <h2>ما المشروع الأنسب لك؟ 🎯</h2>
+      <h2>ما المشروع الأنسب لك؟</h2>
     </div>
     <div class="solution-points fade-in">
       <div class="solution-point">
-        <div class="solution-point-icon">🔍</div>
+        <div class="solution-point-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
         <span class="solution-point-text">اكتشاف نقاط القوة الفريدة</span>
       </div>
       <div class="solution-point">
-        <div class="solution-point-icon">📊</div>
+        <div class="solution-point-icon"><i class="fa-solid fa-chart-bar"></i></div>
         <span class="solution-point-text">تحليل المهارات والخبرات</span>
       </div>
       <div class="solution-point">
-        <div class="solution-point-icon">💎</div>
-        <span class="solution-point-text">اختيار فكرة مناسبة وقابلة للتنفيذ</span>
+        <div class="solution-point-icon"><i class="fa-solid fa-gem"></i></div>
+        <span class="solution-point-text">اختيار فكرة قابلة للتنفيذ</span>
       </div>
       <div class="solution-point">
-        <div class="solution-point-icon">✅</div>
+        <div class="solution-point-icon"><i class="fa-solid fa-circle-check"></i></div>
         <span class="solution-point-text">تقييم قابلية التنفيذ في السوق</span>
       </div>
       <div class="solution-point">
-        <div class="solution-point-icon">🏛️</div>
+        <div class="solution-point-icon"><i class="fa-solid fa-building"></i></div>
         <span class="solution-point-text">بناء نموذج عمل متكامل</span>
       </div>
       <div class="solution-point">
-        <div class="solution-point-icon">👥</div>
+        <div class="solution-point-icon"><i class="fa-solid fa-user-tie"></i></div>
         <span class="solution-point-text">تحديد العميل المستهدف بدقة</span>
       </div>
       <div class="solution-point">
-        <div class="solution-point-icon">🚀</div>
+        <div class="solution-point-icon"><i class="fa-solid fa-rocket"></i></div>
         <span class="solution-point-text">تجهيز خطة بداية عملية</span>
       </div>
     </div>
@@ -845,10 +651,8 @@
   <div class="section-inner">
     <div class="section-eyebrow" style="color:var(--gold)">خدماتنا</div>
     <h2 class="section-title">اختر الخدمة الأنسب لك</h2>
-    <p class="section-subtitle" style="color:rgba(255,255,255,0.6); margin-bottom:48px">ثلاث خدمات مصممة لمراحل مختلفة من رحلتك الريادية</p>
-    <div class="products-grid" id="products-grid">
-      <!-- Populated by JS -->
-    </div>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.6);margin-bottom:48px">ثلاث خدمات مصممة لمراحل مختلفة من رحلتك الريادية</p>
+    <div class="products-grid" id="products-grid"></div>
   </div>
 </section>
 
@@ -894,31 +698,31 @@
     <div class="stats-header fade-in">
       <div class="section-eyebrow" style="color:var(--gold)">خبراتنا</div>
       <h2>خبرة عملية عميقة في تحويل الأفكار إلى مشاريع قابلة للتنفيذ</h2>
-      <p>يمتلك فريق عمل مبادر كوتشينج خبرة تراكمية واسعة في ريادة الأعمال والكوتشينج والاستشارات. لا يعتمد الفريق على الطرح النظري فقط، بل على ممارسة عملية ممتدة مع رواد أعمال ومشاريع واقعية في مراحل مختلفة من الفكرة إلى الإطلاق.</p>
+      <p>يمتلك فريق عمل مبادر كوتشينج خبرة تراكمية واسعة في ريادة الأعمال والكوتشينج والاستشارات. لا يعتمد الفريق على الطرح النظري فقط، بل على ممارسة عملية ممتدة مع رواد أعمال ومشاريع واقعية.</p>
     </div>
     <div class="stats-grid fade-in">
       <div class="stat-card">
-        <div class="stat-icon">📋</div>
+        <div class="stat-icon"><i class="fa-solid fa-file-lines"></i></div>
         <div class="stat-number"><span class="plus">+</span>500</div>
         <div class="stat-label">دراسة جدوى تمت مراجعتها أو إعدادها</div>
       </div>
       <div class="stat-card">
-        <div class="stat-icon">👥</div>
+        <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
         <div class="stat-number"><span class="plus">+</span>2000</div>
-        <div class="stat-label">رائد ورائدة أعمال تم تدريبهم وتأهيلهم</div>
+        <div class="stat-label">رائد ورائدة أعمال تم تدريبهم</div>
       </div>
       <div class="stat-card">
-        <div class="stat-icon">⏱️</div>
+        <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
         <div class="stat-number"><span class="plus">+</span>4000</div>
-        <div class="stat-label">ساعة كوتشينج واستشارات في ريادة الأعمال</div>
+        <div class="stat-label">ساعة كوتشينج واستشارات</div>
       </div>
       <div class="stat-card">
-        <div class="stat-icon">🏗️</div>
+        <div class="stat-icon"><i class="fa-solid fa-sitemap"></i></div>
         <div class="stat-number"><span class="plus">+</span>300</div>
-        <div class="stat-label">نموذج عمل وقيمة مقترحة تمت مراجعتها</div>
+        <div class="stat-label">نموذج عمل تمت مراجعته أو تصميمه</div>
       </div>
       <div class="stat-card">
-        <div class="stat-icon">🚀</div>
+        <div class="stat-icon"><i class="fa-solid fa-rocket"></i></div>
         <div class="stat-number"><span class="plus">+</span>100</div>
         <div class="stat-label">مشروع ومبادرة ناجحة بمساهمة مباشرة</div>
       </div>
@@ -934,42 +738,42 @@
     <p class="section-subtitle">نقاط تميّز حقيقية وليست مجرد شعارات</p>
     <div class="why-grid fade-in">
       <div class="why-card">
-        <div class="why-icon">🎯</div>
+        <div class="why-icon"><i class="fa-solid fa-crosshairs"></i></div>
         <div class="why-text">
           <h4>لا نبيع أفكارًا جاهزة</h4>
           <p>نساعدك على اكتشاف ما يناسبك أنت تحديدًا، بناءً على مهاراتك وظروفك الفعلية</p>
         </div>
       </div>
       <div class="why-card">
-        <div class="why-icon">🔗</div>
+        <div class="why-icon"><i class="fa-solid fa-link"></i></div>
         <div class="why-text">
           <h4>نجمع بين الكوتشينج وريادة الأعمال</h4>
           <p>منهجية متكاملة تربط بين التطوير الشخصي وبناء المشاريع التجارية الفعلية</p>
         </div>
       </div>
       <div class="why-card">
-        <div class="why-icon">⚙️</div>
+        <div class="why-icon"><i class="fa-solid fa-gears"></i></div>
         <div class="why-text">
           <h4>نركز على التطبيق وليس التنظير</h4>
           <p>كل جلسة تنتهي بخطوات عملية واضحة يمكن تنفيذها فورًا</p>
         </div>
       </div>
       <div class="why-card">
-        <div class="why-icon">🛡️</div>
+        <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
         <div class="why-text">
           <h4>نساعدك على تقليل التشتت والمخاطر</h4>
           <p>نتجنب القرارات العشوائية من خلال تحليل موضوعي وشامل للفرص والمخاطر</p>
         </div>
       </div>
       <div class="why-card">
-        <div class="why-icon">🗺️</div>
+        <div class="why-icon"><i class="fa-solid fa-map-location-dot"></i></div>
         <div class="why-text">
           <h4>منهجية من الفكرة إلى النموذج</h4>
           <p>مسار واضح وموثوق يأخذك من نقطة البداية وحتى مشروع قابل للتنفيذ</p>
         </div>
       </div>
       <div class="why-card">
-        <div class="why-icon">🌍</div>
+        <div class="why-icon"><i class="fa-solid fa-earth-americas"></i></div>
         <div class="why-text">
           <h4>مناسب للجميع</h4>
           <p>الموظف، الباحث عن عمل، ربة المنزل، المستقل، وصاحب الفكرة — كلهم يجدون قيمة حقيقية</p>
@@ -985,9 +789,7 @@
     <div class="section-eyebrow">آراء العملاء</div>
     <h2 class="section-title">ماذا قال عملاؤنا؟</h2>
     <p class="section-subtitle">تجارب حقيقية من أشخاص حولوا مهاراتهم إلى مشاريع ناجحة</p>
-    <div class="testimonials-grid fade-in" id="testimonials-grid">
-      <!-- Populated by JS -->
-    </div>
+    <div class="testimonials-grid fade-in" id="testimonials-grid"></div>
   </div>
 </section>
 
@@ -997,9 +799,7 @@
     <div class="section-eyebrow">الأسئلة الشائعة</div>
     <h2 class="section-title">أسئلة يطرحها الكثيرون</h2>
     <p class="section-subtitle">إجابات واضحة لأكثر الأسئلة شيوعًا</p>
-    <div class="faq-list fade-in" id="faq-list">
-      <!-- Populated by JS -->
-    </div>
+    <div class="faq-list fade-in" id="faq-list"></div>
   </div>
 </section>
 
@@ -1008,8 +808,8 @@
   <h2>لا تبدأ مشروعك <span>بعشوائية</span>.<br>ابدأ من وضوح.</h2>
   <p>كل إنسان بداخله مشروع ينتظر قراراً. القرار الصحيح يبدأ بالخطوة الصحيحة.</p>
   <div class="final-cta-actions">
-    <a href="#products" class="btn-primary">اختر الخدمة المناسبة لك ←</a>
-    <a href="https://wa.me/96877684008?text=مرحبًا%2C%20أرغب%20في%20الاستفسار%20عن%20خدمات%20مبادر%20كوتشينج" target="_blank" class="btn-whatsapp">💬 تواصل عبر الواتساب</a>
+    <a href="#products" class="btn-primary">اختر الخدمة المناسبة لك <i class="fa-solid fa-arrow-left"></i></a>
+    <a href="https://wa.me/96877684008?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%20%D9%85%D8%A8%D8%A7%D8%AF%D8%B1%20%D9%83%D9%88%D8%AA%D8%B4%D9%8A%D9%86%D8%AC" target="_blank" class="btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب</a>
   </div>
 </section>
 
@@ -1029,7 +829,7 @@
 
 <!-- CART FAB -->
 <button class="cart-fab" onclick="openCart()" title="السلة">
-  🛒
+  <i class="fa-solid fa-cart-shopping"></i>
   <div class="cart-badge" id="cart-badge">0</div>
 </button>
 
@@ -1037,12 +837,10 @@
 <div class="overlay" id="cart-overlay">
   <div class="modal" id="cart-modal">
     <div class="modal-header">
-      <div class="modal-title">🛒 سلة المشتريات</div>
+      <div class="modal-title">سلة المشتريات</div>
       <button class="modal-close" onclick="closeCart()">✕</button>
     </div>
-    <div class="modal-body" id="cart-modal-body">
-      <!-- Populated by JS -->
-    </div>
+    <div class="modal-body" id="cart-modal-body"></div>
   </div>
 </div>
 
@@ -1053,447 +851,250 @@
       <div class="modal-title" id="order-modal-title">إتمام الطلب</div>
       <button class="modal-close" onclick="closeOrder()">✕</button>
     </div>
-    <div class="modal-body" id="order-modal-body">
-      <!-- Populated by JS -->
-    </div>
+    <div class="modal-body" id="order-modal-body"></div>
   </div>
 </div>
 
 <script>
-/* ═══════════════════════════════════════════════════
-   DATA STORE — all data stored in localStorage
-   (In production, replace with real API calls to Supabase)
-═══════════════════════════════════════════════════ */
+const WA_NUM = '96877684008';
+const WA_BASE = 'https://wa.me/' + WA_NUM + '?text=';
+
 const DB = {
-  get(key, fallback) {
-    try { return JSON.parse(localStorage.getItem('mubadir_' + key)) ?? fallback; }
-    catch { return fallback; }
-  },
-  set(key, val) { localStorage.setItem('mubadir_' + key, JSON.stringify(val)); }
+  get(k,fb){try{return JSON.parse(localStorage.getItem('mubadir_'+k))??fb;}catch{return fb;}},
+  set(k,v){localStorage.setItem('mubadir_'+k,JSON.stringify(v));}
 };
 
-// ── Default products
 const DEFAULT_PRODUCTS = [
-  {
-    id: 'p1', active: true, featured: false, order: 1,
-    name: 'جلسة اكتشاف المشروع الأنسب لك',
-    desc: 'جلسة مخصصة للأشخاص الذين يملكون مهارات أو خبرات أو أفكارًا متفرقة، لكنهم لا يعرفون من أين يبدأون أو ما المشروع الأنسب لهم.',
-    forWho: 'لمن يملك مهارات أو أفكارًا ولا يعرف كيف يبدأ',
-    outputs: ['تحليل أولي للمهارات والخبرات والاهتمامات','تحديد فرص مناسبة للعميل','ترشيح أفكار مشاريع قابلة للتنفيذ','اختيار الاتجاه الأنسب للبداية','توصية واضحة بالخطوة التالية'],
-    price: 'تواصل للسعر', priceNum: 0,
-    cta: 'احجز جلسة الاكتشاف',
-    badge: ''
-  },
-  {
-    id: 'p2', active: true, featured: true, order: 2,
-    name: 'مراجعة فكرة المشروع وتقييم الجاهزية',
-    desc: 'خدمة مخصصة لمن لديه فكرة مشروع ويريد تقييمها قبل البدء، لمعرفة نقاط القوة والضعف ومدى جاهزيتها للتنفيذ.',
-    forWho: 'لمن لديه فكرة ويريد تقييمها قبل الاستثمار',
-    outputs: ['مراجعة الفكرة وتحليل العميل المستهدف','تقييم القيمة المقترحة','مراجعة نموذج العمل','تحديد نقاط الضعف والمخاطر','توصيات عملية للتحسين','درجة الجاهزية للتنفيذ'],
-    price: 'تواصل للسعر', priceNum: 0,
-    cta: 'قيّم فكرتك الآن',
-    badge: 'الأكثر طلبًا'
-  },
-  {
-    id: 'p3', active: true, featured: false, order: 3,
-    name: 'برنامج بناء مشروعك من الصفر',
-    desc: 'برنامج أعمق ومتكامل يساعد العميل على الانتقال من الفكرة أو المهارة إلى مشروع واضح، منظم، قابل للبيع والتطوير.',
-    forWho: 'لمن يريد بناء مشروع متكامل خطوة بخطوة',
-    outputs: ['تحديد فكرة المشروع وبناء نموذج العمل','تصميم القيمة المقترحة','تحديد شرائح العملاء','بناء المنتج أو الخدمة الأساسية','تصور التسعير المناسب','تجهيز خطة إطلاق أولية','خطوات تنفيذ عملية'],
-    price: 'تواصل للسعر', priceNum: 0,
-    cta: 'ابدأ بناء مشروعك',
-    badge: ''
-  }
+  {id:'p1',active:true,featured:false,order:1,name:'جلسة اكتشاف المشروع الأنسب لك',desc:'جلسة مخصصة للأشخاص الذين يملكون مهارات أو خبرات أو أفكارًا متفرقة، لكنهم لا يعرفون من أين يبدأون.',forWho:'لمن يملك مهارات أو أفكارًا ولا يعرف كيف يبدأ',outputs:['تحليل أولي للمهارات والخبرات والاهتمامات','تحديد فرص مناسبة للعميل','ترشيح أفكار مشاريع قابلة للتنفيذ','اختيار الاتجاه الأنسب للبداية','توصية واضحة بالخطوة التالية'],price:'تواصل للسعر',priceNum:0,cta:'احجز جلسة الاكتشاف',badge:''},
+  {id:'p2',active:true,featured:true,order:2,name:'مراجعة فكرة المشروع وتقييم الجاهزية',desc:'خدمة مخصصة لمن لديه فكرة مشروع ويريد تقييمها قبل البدء، لمعرفة نقاط القوة والضعف ومدى جاهزيتها.',forWho:'لمن لديه فكرة ويريد تقييمها قبل الاستثمار',outputs:['مراجعة الفكرة وتحليل العميل المستهدف','تقييم القيمة المقترحة','مراجعة نموذج العمل','تحديد نقاط الضعف والمخاطر','توصيات عملية للتحسين','درجة الجاهزية للتنفيذ'],price:'تواصل للسعر',priceNum:0,cta:'قيّم فكرتك الآن',badge:'الأكثر طلبًا'},
+  {id:'p3',active:true,featured:false,order:3,name:'برنامج بناء مشروعك من الصفر',desc:'برنامج متكامل يساعد العميل على الانتقال من الفكرة أو المهارة إلى مشروع واضح، منظم، قابل للبيع والتطوير.',forWho:'لمن يريد بناء مشروع متكامل خطوة بخطوة',outputs:['تحديد فكرة المشروع وبناء نموذج العمل','تصميم القيمة المقترحة','تحديد شرائح العملاء','بناء المنتج أو الخدمة الأساسية','تصور التسعير المناسب','تجهيز خطة إطلاق أولية','خطوات تنفيذ عملية'],price:'تواصل للسعر',priceNum:0,cta:'ابدأ بناء مشروعك',badge:''}
 ];
-
 const DEFAULT_TESTIMONIALS = [
-  { id: 't1', text: 'كنت أملك أكثر من فكرة وكنت في حيرة شديدة. بعد جلسة الاكتشاف عرفت بالضبط أي اتجاه هو الأنسب لي وخرجت بخطوات واضحة.', name: 'أ. ريم المحمدية', role: 'موظفة أرادت الاستقلالية', init: 'ر' },
-  { id: 't2', text: 'ساعدني مبادر كوتشينج على رؤية مشروعي بطريقة أوضح وأكثر واقعية. التقييم كان دقيقًا جدًا وحدد نقاط ضعف ما كنت لأكتشفها لوحدي.', name: 'م. خالد الزدجالي', role: 'رائد أعمال ناشئ', init: 'خ' },
-  { id: 't3', text: 'خرجت من البرنامج بخطة عملية وليس مجرد حماس مؤقت. الآن لديّ مشروع واضح ونموذج عمل حقيقي وأعرف خطواتي القادمة.', name: 'أ. فاطمة البلوشية', role: 'ربة منزل وسيدة أعمال', init: 'ف' }
+  {id:'t1',text:'كنت أملك أكثر من فكرة وكنت في حيرة شديدة. بعد جلسة الاكتشاف عرفت بالضبط أي اتجاه هو الأنسب لي وخرجت بخطوات واضحة.',name:'أ. ريم المحمدية',role:'موظفة أرادت الاستقلالية',init:'ر'},
+  {id:'t2',text:'ساعدني مبادر كوتشينج على رؤية مشروعي بطريقة أوضح وأكثر واقعية. التقييم كان دقيقًا جدًا وحدد نقاط ضعف ما كنت لأكتشفها لوحدي.',name:'م. خالد الزدجالي',role:'رائد أعمال ناشئ',init:'خ'},
+  {id:'t3',text:'خرجت من البرنامج بخطة عملية وليس مجرد حماس مؤقت. الآن لديّ مشروع واضح ونموذج عمل حقيقي وأعرف خطواتي القادمة.',name:'أ. فاطمة البلوشية',role:'ربة منزل وسيدة أعمال',init:'ف'}
 ];
-
 const DEFAULT_FAQS = [
-  { id: 'f1', q: 'هل أحتاج أن تكون لديّ فكرة جاهزة للاستفادة من الخدمة؟', a: 'لا! في الواقع كثير من عملائنا يبدأون بدون أي فكرة محددة. نبدأ معك من حيث أنت وننطلق من مهاراتك وخبراتك واهتماماتك للوصول إلى الفكرة الأنسب.' },
-  { id: 'f2', q: 'هل الجلسات والخدمات أونلاين أم حضورية؟', a: 'نقدم خدماتنا أونلاين عبر الإنترنت، مما يتيح لك الاستفادة من أي مكان في العالم وبدون التقيد بالمواعيد الجغرافية.' },
-  { id: 'f3', q: 'هل الخدمة مناسبة للموظفين الذين لا يريدون ترك وظائفهم؟', a: 'بالتأكيد! نعمل مع كثير من الموظفين الذين يريدون بناء مشروع جانبي أو التحضير للاستقلالية المستقبلية، مع الأخذ بعين الاعتبار قيود الوقت والموارد.' },
-  { id: 'f4', q: 'هل يمكن الدفع إلكترونيًا؟', a: 'نعمل حاليًا على تفعيل بوابة الدفع الإلكتروني لتسهيل عملية الحجز. في الوقت الحالي يمكنك التواصل معنا عبر الواتساب لإتمام الحجز والدفع.' },
-  { id: 'f5', q: 'هل تضمنون نجاح المشروع؟', a: 'لا يمكن لأحد ضمان نجاح أي مشروع، لكننا نضمن تزويدك بالأدوات والمنهجية والتحليل الذي يزيد بشكل كبير من فرص النجاح ويقلل من المخاطر.' },
-  { id: 'f6', q: 'كيف يتم الحجز؟', a: 'ببساطة: اضغط على زر "ابدأ الآن" أو "احجز الخدمة" واملأ نموذج الطلب، وسيتواصل معك فريقنا خلال 24 ساعة لتأكيد الموعد وتفاصيل الدفع.' },
-  { id: 'f7', q: 'هل يوجد تواصل مستمر عبر الواتساب؟', a: 'نعم، يمكنك التواصل معنا مباشرة عبر الواتساب على الرقم +96877684008 وسيرد عليك فريقنا في أقرب وقت ممكن.' }
+  {id:'f1',q:'هل أحتاج أن تكون لديّ فكرة جاهزة للاستفادة من الخدمة؟',a:'لا! كثير من عملائنا يبدأون بدون أي فكرة محددة. نبدأ من مهاراتك واهتماماتك وصولًا للفكرة الأنسب.'},
+  {id:'f2',q:'هل الجلسات والخدمات أونلاين أم حضورية؟',a:'نقدم خدماتنا أونلاين عبر الإنترنت، مما يتيح لك الاستفادة من أي مكان في العالم.'},
+  {id:'f3',q:'هل الخدمة مناسبة للموظفين الذين لا يريدون ترك وظائفهم؟',a:'بالتأكيد! نعمل مع كثير من الموظفين الذين يريدون بناء مشروع جانبي مع الأخذ بعين الاعتبار قيود الوقت والموارد.'},
+  {id:'f4',q:'هل يمكن الدفع إلكترونيًا؟',a:'نعمل على تفعيل بوابة الدفع الإلكتروني قريبًا. حاليًا يمكنك التواصل عبر الواتساب لإتمام الحجز والدفع.'},
+  {id:'f5',q:'هل تضمنون نجاح المشروع؟',a:'لا يمكن لأحد ضمان نجاح أي مشروع، لكننا نضمن تزويدك بالأدوات والمنهجية التي تزيد من فرص النجاح وتقلل المخاطر.'},
+  {id:'f6',q:'كيف يتم الحجز؟',a:'اضغط على زر الخدمة المناسبة لك واملأ نموذج الطلب، وسيتواصل معك فريقنا خلال 24 ساعة لتأكيد الموعد.'},
+  {id:'f7',q:'هل يوجد تواصل مباشر عبر الواتساب؟',a:'نعم، يمكنك التواصل معنا مباشرة على الرقم +96877684008 وسيرد عليك فريقنا في أقرب وقت.'}
 ];
 
-// ── Initialize data if not exists
-function initData() {
-  if (!DB.get('products', null)) DB.set('products', DEFAULT_PRODUCTS);
-  if (!DB.get('testimonials', null)) DB.set('testimonials', DEFAULT_TESTIMONIALS);
-  if (!DB.get('faqs', null)) DB.set('faqs', DEFAULT_FAQS);
-  if (!DB.get('orders', null)) DB.set('orders', []);
-  if (!DB.get('carts', null)) DB.set('carts', []);
+function initData(){
+  if(!DB.get('products',null)) DB.set('products',DEFAULT_PRODUCTS);
+  if(!DB.get('testimonials',null)) DB.set('testimonials',DEFAULT_TESTIMONIALS);
+  if(!DB.get('faqs',null)) DB.set('faqs',DEFAULT_FAQS);
+  if(!DB.get('orders',null)) DB.set('orders',[]);
+  if(!DB.get('carts',null)) DB.set('carts',[]);
 }
 
-/* ═══════════════════════════════════════════════════
-   CART STATE
-═══════════════════════════════════════════════════ */
 let cart = [];
 let currentCartId = null;
-let cartSaveTimer = null;
 
-function getCart() { return cart; }
-
-function updateCartBadge() {
-  const badge = document.getElementById('cart-badge');
-  if (cart.length > 0) {
-    badge.textContent = cart.length;
-    badge.classList.add('visible');
-  } else {
-    badge.classList.remove('visible');
-  }
+function updateCartBadge(){
+  const b=document.getElementById('cart-badge');
+  if(cart.length>0){b.textContent=cart.length;b.classList.add('visible');}
+  else b.classList.remove('visible');
 }
 
-function addToCart(productId) {
-  const products = DB.get('products', DEFAULT_PRODUCTS);
-  const p = products.find(x => x.id === productId);
-  if (!p) return;
-  if (!cart.find(x => x.id === productId)) {
-    cart.push({ id: p.id, name: p.name, price: p.price, priceNum: p.priceNum });
+function addToCart(productId){
+  const products=DB.get('products',DEFAULT_PRODUCTS);
+  const p=products.find(x=>x.id===productId);
+  if(!p) return;
+  if(!cart.find(x=>x.id===productId)){
+    cart.push({id:p.id,name:p.name,price:p.price,priceNum:p.priceNum});
     updateCartBadge();
     saveAbandonedCart('added_to_cart');
     showToast('تمت الإضافة إلى السلة ✓');
-  } else {
-    showToast('المنتج موجود بالفعل في السلة');
-  }
+  } else showToast('المنتج موجود بالفعل في السلة');
 }
 
-function removeFromCart(productId) {
-  cart = cart.filter(x => x.id !== productId);
+function removeFromCart(id){
+  cart=cart.filter(x=>x.id!==id);
   updateCartBadge();
-  saveAbandonedCart('added_to_cart');
   renderCartModal();
 }
 
-function openCart() {
-  renderCartModal();
-  document.getElementById('cart-overlay').classList.add('open');
-}
-function closeCart() { document.getElementById('cart-overlay').classList.remove('open'); }
+function openCart(){renderCartModal();document.getElementById('cart-overlay').classList.add('open');}
+function closeCart(){document.getElementById('cart-overlay').classList.remove('open');}
+function closeOrder(){document.getElementById('order-overlay').classList.remove('open');}
 
-function renderCartModal() {
-  const body = document.getElementById('cart-modal-body');
-  if (cart.length === 0) {
-    body.innerHTML = `<div class="cart-empty"><div class="cart-empty-icon">🛒</div><p>السلة فارغة حاليًا</p><br><a href="#products" class="btn-primary" onclick="closeCart()" style="display:inline-block">تصفح الخدمات</a></div>`;
+function renderCartModal(){
+  const body=document.getElementById('cart-modal-body');
+  if(cart.length===0){
+    body.innerHTML='<div class="cart-empty"><i class="fa-solid fa-cart-shopping" style="font-size:40px;color:var(--gray-300);margin-bottom:12px;display:block"></i><p>السلة فارغة حاليًا</p><br><a href="#products" class="btn-primary" onclick="closeCart()" style="display:inline-flex">تصفح الخدمات</a></div>';
     return;
   }
-  const total = cart.reduce((s, x) => s + (x.priceNum || 0), 0);
-  body.innerHTML = `
-    <div class="cart-items">
-      ${cart.map(item => `
-        <div class="cart-item">
-          <div class="cart-item-name">${item.name}</div>
-          <div class="cart-item-price">${item.priceNum > 0 ? item.priceNum + ' OMR' : 'تواصل للسعر'}</div>
-          <button class="cart-item-remove" onclick="removeFromCart('${item.id}')">✕</button>
-        </div>`).join('')}
-    </div>
-    ${total > 0 ? `<div class="cart-total"><span>الإجمالي</span><span class="cart-total-amount">${total} OMR</span></div>` : ''}
-    <button class="submit-btn" onclick="closeCart(); openOrderForm(null, true)">إتمام الطلب ←</button>
-    <br><br>
-    <button onclick="closeCart()" style="width:100%;background:none;border:none;color:var(--text-light);cursor:pointer;font-family:var(--font);font-size:14px">متابعة التصفح</button>
+  const total=cart.reduce((s,x)=>s+(x.priceNum||0),0);
+  body.innerHTML=`
+    <div>${cart.map(item=>`<div class="cart-item"><div class="cart-item-name">${item.name}</div><div class="cart-item-price">${item.priceNum>0?item.priceNum+' OMR':'تواصل للسعر'}</div><button class="cart-item-remove" onclick="removeFromCart('${item.id}')"><i class="fa-solid fa-xmark"></i></button></div>`).join('')}</div>
+    ${total>0?`<div class="cart-total"><span>الإجمالي</span><span class="cart-total-amount">${total} OMR</span></div>`:''}
+    <button class="submit-btn" onclick="closeCart();openOrderForm(null,true)">إتمام الطلب <i class="fa-solid fa-arrow-left"></i></button>
+    <br><br><button onclick="closeCart()" style="width:100%;background:none;border:none;color:var(--text-light);cursor:pointer;font-family:var(--font);font-size:14px">متابعة التصفح</button>
   `;
 }
 
-/* ═══════════════════════════════════════════════════
-   ORDER FORM
-═══════════════════════════════════════════════════ */
-function openOrderForm(productId, fromCart = false) {
-  const products = DB.get('products', DEFAULT_PRODUCTS);
-  let selectedProducts = [];
-  if (fromCart) {
-    selectedProducts = [...cart];
-  } else if (productId) {
-    const p = products.find(x => x.id === productId);
-    if (p) selectedProducts = [{ id: p.id, name: p.name, price: p.price, priceNum: p.priceNum }];
-  }
-  document.getElementById('order-modal-title').textContent = fromCart ? '🛒 إتمام طلبك' : '📝 تسجيل طلبك';
-  const body = document.getElementById('order-modal-body');
-  body.innerHTML = `
-    <div class="form-product-tag">
-      ${selectedProducts.map(p => `📦 ${p.name}`).join('<br>')}
-    </div>
+function openOrderForm(productId,fromCart=false){
+  const products=DB.get('products',DEFAULT_PRODUCTS);
+  let selected=[];
+  if(fromCart) selected=[...cart];
+  else if(productId){const p=products.find(x=>x.id===productId);if(p) selected=[{id:p.id,name:p.name,price:p.price,priceNum:p.priceNum}];}
+  document.getElementById('order-modal-title').textContent=fromCart?'إتمام طلبك':'تسجيل طلبك';
+  document.getElementById('order-modal-body').innerHTML=`
+    <div class="form-product-tag">${selected.map(p=>'<i class="fa-solid fa-box" style="color:var(--gold);margin-left:6px"></i>'+p.name).join('<br>')}</div>
     <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">الاسم الكامل <span class="req">*</span></label>
-        <input type="text" class="form-input" id="f-name" placeholder="أدخل اسمك الكريم" oninput="onFormInput()" />
-      </div>
-      <div class="form-group">
-        <label class="form-label">رقم الهاتف <span class="req">*</span></label>
-        <input type="tel" class="form-input" id="f-phone" placeholder="مثال: 96877600000" oninput="onFormInput()" />
-      </div>
+      <div class="form-group"><label class="form-label">الاسم الكامل <span class="req">*</span></label><input type="text" class="form-input" id="f-name" placeholder="أدخل اسمك الكريم" oninput="onFormInput()" /></div>
+      <div class="form-group"><label class="form-label">رقم الهاتف <span class="req">*</span></label><input type="tel" class="form-input" id="f-phone" placeholder="مثال: 96877600000" oninput="onFormInput()" /></div>
     </div>
-    <div class="form-group">
-      <label class="form-label">البريد الإلكتروني</label>
-      <input type="email" class="form-input" id="f-email" placeholder="example@email.com" oninput="onFormInput()" />
-    </div>
-    <div class="form-group">
-      <label class="form-label">ملاحظات أو استفسارات (اختياري)</label>
-      <textarea class="form-input" id="f-notes" rows="3" placeholder="أي معلومات إضافية تود مشاركتها..."></textarea>
-    </div>
-    <button class="submit-btn" id="submit-order-btn" onclick="submitOrder(${JSON.stringify(selectedProducts).replace(/"/g, '&quot;')})">
-      أرسل طلبك ←
-    </button>
-    <p style="text-align:center;font-size:12px;color:var(--text-light);margin-top:12px">
-      سيتواصل معك فريقنا خلال 24 ساعة لتأكيد الطلب
-    </p>
+    <div class="form-group"><label class="form-label">البريد الإلكتروني</label><input type="email" class="form-input" id="f-email" placeholder="example@email.com" oninput="onFormInput()" /></div>
+    <div class="form-group"><label class="form-label">ملاحظات أو استفسارات (اختياري)</label><textarea class="form-input" id="f-notes" rows="3" placeholder="أي معلومات إضافية تود مشاركتها..."></textarea></div>
+    <button class="submit-btn" id="submit-order-btn" onclick="submitOrder(${JSON.stringify(selected).replace(/"/g,'&quot;')})">أرسل طلبك <i class="fa-solid fa-arrow-left"></i></button>
+    <p style="text-align:center;font-size:12px;color:var(--text-light);margin-top:10px">سيتواصل معك فريقنا خلال 24 ساعة لتأكيد الطلب</p>
   `;
   document.getElementById('order-overlay').classList.add('open');
-  // Track form open for abandoned cart
-  saveAbandonedCart('opened_form', selectedProducts);
+  saveAbandonedCart('opened_form',selected);
 }
 
-function onFormInput() {
-  const name = document.getElementById('f-name')?.value;
-  const phone = document.getElementById('f-phone')?.value;
-  const email = document.getElementById('f-email')?.value;
-  clearTimeout(cartSaveTimer);
-  cartSaveTimer = setTimeout(() => saveAbandonedCart('filling_form', null, { name, phone, email }), 2000);
+function onFormInput(){
+  const name=document.getElementById('f-name')?.value;
+  const phone=document.getElementById('f-phone')?.value;
+  const email=document.getElementById('f-email')?.value;
+  clearTimeout(window._formTimer);
+  window._formTimer=setTimeout(()=>saveAbandonedCart('filling_form',null,{name,phone,email}),2000);
 }
 
-function closeOrder() { document.getElementById('order-overlay').classList.remove('open'); }
-
-function submitOrder(selectedProducts) {
-  const name = document.getElementById('f-name').value.trim();
-  const phone = document.getElementById('f-phone').value.trim();
-  const email = document.getElementById('f-email').value.trim();
-  const notes = document.getElementById('f-notes').value.trim();
-  if (!name || !phone) {
-    showToast('الرجاء إدخال الاسم ورقم الهاتف');
-    return;
-  }
-  const btn = document.getElementById('submit-order-btn');
-  btn.disabled = true; btn.textContent = 'جاري الإرسال...';
-
-  const orders = DB.get('orders', []);
-  const order = {
-    id: 'ORD-' + Date.now(),
-    name, phone, email, notes,
-    products: selectedProducts,
-    total: selectedProducts.reduce((s, x) => s + (x.priceNum || 0), 0),
-    status: 'new',
-    internalNote: '',
-    createdAt: new Date().toISOString(),
-    source: 'landing_page'
-  };
-  orders.unshift(order);
-  DB.set('orders', orders);
-
-  // Mark cart as converted
-  if (currentCartId) {
-    const carts = DB.get('carts', []);
-    const idx = carts.findIndex(c => c.id === currentCartId);
-    if (idx >= 0) { carts[idx].status = 'converted'; carts[idx].orderId = order.id; DB.set('carts', carts); }
-  }
-  cart = [];
-  currentCartId = null;
-  updateCartBadge();
-
+function submitOrder(selected){
+  const name=document.getElementById('f-name').value.trim();
+  const phone=document.getElementById('f-phone').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const notes=document.getElementById('f-notes').value.trim();
+  if(!name||!phone){showToast('الرجاء إدخال الاسم ورقم الهاتف');return;}
+  const btn=document.getElementById('submit-order-btn');
+  btn.disabled=true;btn.textContent='جاري الإرسال...';
+  const orders=DB.get('orders',[]);
+  const order={id:'ORD-'+Date.now(),name,phone,email,notes,products:selected,total:selected.reduce((s,x)=>s+(x.priceNum||0),0),status:'new',internalNote:'',createdAt:new Date().toISOString(),source:'landing_page'};
+  orders.unshift(order);DB.set('orders',orders);
+  if(currentCartId){const carts=DB.get('carts',[]);const idx=carts.findIndex(c=>c.id===currentCartId);if(idx>=0){carts[idx].status='converted';carts[idx].orderId=order.id;DB.set('carts',carts);}}
+  cart=[];currentCartId=null;updateCartBadge();
   // TODO: Integrate Thawani Payment Gateway here.
-  // When Thawani is connected, redirect to payment page instead of showing success.
-  // Expected flow:
-  // 1. Create order in DB with status 'pending_payment'
-  // 2. Call Thawani API to create checkout session
-  // 3. Redirect user to Thawani checkout URL
-  // 4. Handle webhook callback to update order status
-
-  const waMsgLines = selectedProducts.map(p => p.name).join(' و ');
-  const waMsg = encodeURIComponent(`مرحبًا، لقد أرسلت طلبًا لخدمة: ${waMsgLines}. اسمي: ${name}، رقمي: ${phone}`);
-  const waUrl = `https://wa.me/96877684008?text=${waMsg}`;
-
-  document.getElementById('order-modal-body').innerHTML = `
+  const prods=selected.map(p=>p.name).join(' و ');
+  const waMsg=encodeURIComponent('مرحبًا، لقد أرسلت طلبًا لخدمة: '+prods+'. اسمي: '+name+'، رقمي: '+phone);
+  document.getElementById('order-modal-body').innerHTML=`
     <div class="success-state">
-      <div class="success-icon">🎉</div>
+      <div class="success-icon"><i class="fa-solid fa-circle-check" style="color:#10B981;font-size:60px"></i></div>
       <div class="success-title">تم استلام طلبك بنجاح!</div>
       <div class="success-desc">شكرًا لك ${name}! سيتواصل معك فريق مبادر كوتشينج خلال 24 ساعة لتأكيد الطلب وتفاصيل الجلسة.</div>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-        <a href="${waUrl}" target="_blank" class="btn-whatsapp" style="text-decoration:none">
-          💬 تواصل معنا الآن عبر الواتساب
-        </a>
-        <button onclick="closeOrder()" class="btn-outline" style="color:var(--navy);border-color:var(--gray-300)">إغلاق</button>
+        <a href="${WA_BASE}${waMsg}" target="_blank" class="btn-whatsapp" style="text-decoration:none"><i class="fa-brands fa-whatsapp"></i> تواصل معنا الآن</a>
+        <button onclick="closeOrder()" style="background:none;border:2px solid var(--gray-200);color:var(--navy);padding:12px 24px;border-radius:10px;font-family:var(--font);font-weight:600;cursor:pointer">إغلاق</button>
       </div>
     </div>
   `;
 }
 
-/* ═══════════════════════════════════════════════════
-   ABANDONED CART TRACKING
-═══════════════════════════════════════════════════ */
-function saveAbandonedCart(stage, products, contact = {}) {
-  const carts = DB.get('carts', []);
-  if (!currentCartId) {
-    currentCartId = 'CART-' + Date.now();
-    const newCart = {
-      id: currentCartId,
-      products: products || [...cart],
-      total: (products || cart).reduce((s, x) => s + (x.priceNum || 0), 0),
-      stage,
-      status: 'active',
-      ...contact,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-      internalNote: ''
-    };
-    carts.unshift(newCart);
+function saveAbandonedCart(stage,products,contact={}){
+  const carts=DB.get('carts',[]);
+  if(!currentCartId){
+    currentCartId='CART-'+Date.now();
+    carts.unshift({id:currentCartId,products:products||[...cart],total:(products||cart).reduce((s,x)=>s+(x.priceNum||0),0),stage,status:'active',...contact,createdAt:new Date().toISOString(),updatedAt:new Date().toISOString(),internalNote:''});
   } else {
-    const idx = carts.findIndex(c => c.id === currentCartId);
-    if (idx >= 0) {
-      if (products) carts[idx].products = products;
-      if (cart.length) carts[idx].products = [...cart];
-      carts[idx].total = carts[idx].products.reduce((s, x) => s + (x.priceNum || 0), 0);
-      carts[idx].stage = stage;
-      carts[idx].updatedAt = new Date().toISOString();
-      if (contact.name) carts[idx].name = contact.name;
-      if (contact.phone) carts[idx].phone = contact.phone;
-      if (contact.email) carts[idx].email = contact.email;
+    const idx=carts.findIndex(c=>c.id===currentCartId);
+    if(idx>=0){
+      if(products) carts[idx].products=products;
+      if(cart.length) carts[idx].products=[...cart];
+      carts[idx].total=carts[idx].products.reduce((s,x)=>s+(x.priceNum||0),0);
+      carts[idx].stage=stage;carts[idx].updatedAt=new Date().toISOString();
+      if(contact.name) carts[idx].name=contact.name;
+      if(contact.phone) carts[idx].phone=contact.phone;
+      if(contact.email) carts[idx].email=contact.email;
     }
   }
-  DB.set('carts', carts);
-
-  // Mark as abandoned after 30 min inactivity (checked on next page load)
+  DB.set('carts',carts);
   clearTimeout(window._abandonTimer);
-  window._abandonTimer = setTimeout(() => markAbandoned(), 30 * 60 * 1000);
+  window._abandonTimer=setTimeout(()=>{if(!currentCartId)return;const cs=DB.get('carts',[]);const i=cs.findIndex(c=>c.id===currentCartId);if(i>=0&&cs[i].status==='active'){cs[i].status='abandoned';DB.set('carts',cs);}},30*60*1000);
 }
 
-function markAbandoned() {
-  if (!currentCartId) return;
-  const carts = DB.get('carts', []);
-  const idx = carts.findIndex(c => c.id === currentCartId);
-  if (idx >= 0 && carts[idx].status === 'active') {
-    carts[idx].status = 'abandoned';
-    DB.set('carts', carts);
-  }
-}
-
-// Mark old active carts as abandoned on page load
-function checkOldCarts() {
-  const carts = DB.get('carts', []);
-  const cutoff = Date.now() - 30 * 60 * 1000;
-  let changed = false;
-  carts.forEach(c => {
-    if (c.status === 'active' && new Date(c.updatedAt).getTime() < cutoff) {
-      c.status = 'abandoned'; changed = true;
-    }
-  });
-  if (changed) DB.set('carts', carts);
-}
-
-/* ═══════════════════════════════════════════════════
-   RENDER PAGE CONTENT
-═══════════════════════════════════════════════════ */
-function renderProducts() {
-  const products = DB.get('products', DEFAULT_PRODUCTS)
-    .filter(p => p.active)
-    .sort((a, b) => a.order - b.order);
-  const grid = document.getElementById('products-grid');
-  grid.innerHTML = products.map(p => `
-    <div class="product-card ${p.featured ? 'featured' : ''} fade-in">
-      ${p.badge ? `<div class="product-badge">${p.badge}</div>` : ''}
+function renderProducts(){
+  const products=DB.get('products',DEFAULT_PRODUCTS).filter(p=>p.active).sort((a,b)=>a.order-b.order);
+  document.getElementById('products-grid').innerHTML=products.map(p=>`
+    <div class="product-card ${p.featured?'featured':''} fade-in">
+      ${p.badge?`<div class="product-badge">${p.badge}</div>`:''}
       <div class="product-number">0${p.order}</div>
       <div class="product-name">${p.name}</div>
       <div class="product-desc">${p.desc}</div>
-      <div class="product-for">👤 ${p.forWho}</div>
+      <div class="product-for"><i class="fa-solid fa-user"></i> ${p.forWho}</div>
       <div class="product-outputs">
         <div class="product-outputs-title">المخرجات الرئيسية</div>
-        ${p.outputs.map(o => `<div class="product-output-item">${o}</div>`).join('')}
+        ${p.outputs.map(o=>`<div class="product-output-item"><i class="fa-solid fa-check"></i>${o}</div>`).join('')}
       </div>
       <div class="product-price-row">
-        <span class="product-price">${p.price} <small>${p.priceNum > 0 ? 'OMR' : ''}</small></span>
+        <span class="product-price">${p.price}</span>
         <div class="product-actions">
           <button class="btn-product-buy" onclick="openOrderForm('${p.id}')">${p.cta}</button>
           <button class="btn-cart-add" onclick="addToCart('${p.id}')">+ السلة</button>
-          <a href="https://wa.me/96877684008?text=مرحبًا%2C%20أرغب%20في%20الاستفسار%20عن%20منتج%3A%20${encodeURIComponent(p.name)}" target="_blank" class="btn-product-wa">💬</a>
+          <a href="${WA_BASE}${encodeURIComponent('مرحبًا، أرغب في الاستفسار عن خدمة: '+p.name)}" target="_blank" class="btn-product-wa"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
   `).join('');
 }
 
-function renderTestimonials() {
-  const testimonials = DB.get('testimonials', DEFAULT_TESTIMONIALS);
-  document.getElementById('testimonials-grid').innerHTML = testimonials.map(t => `
+function renderTestimonials(){
+  const ts=DB.get('testimonials',DEFAULT_TESTIMONIALS);
+  document.getElementById('testimonials-grid').innerHTML=ts.map(t=>`
     <div class="testimonial-card fade-in">
-      <div class="stars">★★★★★</div>
+      <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
       <div class="testimonial-text">"${t.text}"</div>
       <div class="testimonial-author">
         <div class="author-avatar">${t.init}</div>
-        <div class="author-info">
-          <div class="name">${t.name}</div>
-          <div class="role">${t.role}</div>
-        </div>
+        <div class="author-info"><div class="name">${t.name}</div><div class="role">${t.role}</div></div>
       </div>
     </div>
   `).join('');
 }
 
-function renderFAQ() {
-  const faqs = DB.get('faqs', DEFAULT_FAQS);
-  document.getElementById('faq-list').innerHTML = faqs.map(f => `
+function renderFAQ(){
+  const faqs=DB.get('faqs',DEFAULT_FAQS);
+  document.getElementById('faq-list').innerHTML=faqs.map(f=>`
     <div class="faq-item" id="faq-${f.id}">
       <div class="faq-q" onclick="toggleFAQ('${f.id}')">
         <span>${f.q}</span>
-        <div class="faq-icon">+</div>
+        <div class="faq-icon"><i class="fa-solid fa-plus"></i></div>
       </div>
       <div class="faq-a"><div class="faq-a-inner">${f.a}</div></div>
     </div>
   `).join('');
 }
 
-function toggleFAQ(id) {
-  const el = document.getElementById('faq-' + id);
-  const wasOpen = el.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(e => e.classList.remove('open'));
-  if (!wasOpen) el.classList.add('open');
+function toggleFAQ(id){
+  const el=document.getElementById('faq-'+id);
+  const wasOpen=el.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(e=>e.classList.remove('open'));
+  if(!wasOpen) el.classList.add('open');
 }
 
-/* ═══════════════════════════════════════════════════
-   TOAST
-═══════════════════════════════════════════════════ */
-function showToast(msg) {
-  let t = document.getElementById('toast');
-  if (!t) {
-    t = document.createElement('div');
-    t.id = 'toast';
-    Object.assign(t.style, {
-      position:'fixed', bottom:'100px', left:'50%', transform:'translateX(-50%)',
-      background:var_navy(), color:'#fff', padding:'12px 24px',
-      borderRadius:'100px', fontSize:'14px', fontFamily:'Tajawal,sans-serif',
-      zIndex:'9999', transition:'opacity 0.3s', boxShadow:'0 4px 16px rgba(0,0,0,0.2)'
-    });
-    document.body.appendChild(t);
-  }
-  t.textContent = msg;
-  t.style.opacity = '1';
-  clearTimeout(t._timer);
-  t._timer = setTimeout(() => { t.style.opacity = '0'; }, 2500);
-}
-function var_navy() { return '#0D1F3C'; }
-
-/* ═══════════════════════════════════════════════════
-   SCROLL ANIMATIONS
-═══════════════════════════════════════════════════ */
-function initAnimations() {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+function showToast(msg){
+  let t=document.getElementById('toast');
+  if(!t){t=document.createElement('div');t.id='toast';Object.assign(t.style,{position:'fixed',bottom:'100px',left:'50%',transform:'translateX(-50%)',background:'#0D1F3C',color:'#fff',padding:'12px 24px',borderRadius:'100px',fontSize:'14px',fontFamily:'IBM Plex Sans Arabic,sans-serif',zIndex:'9999',transition:'opacity 0.3s',boxShadow:'0 4px 16px rgba(0,0,0,0.2)',whiteSpace:'nowrap'});document.body.appendChild(t);}
+  t.textContent=msg;t.style.opacity='1';
+  clearTimeout(t._t);t._t=setTimeout(()=>{t.style.opacity='0';},2500);
 }
 
-/* ═══════════════════════════════════════════════════
-   INIT
-═══════════════════════════════════════════════════ */
-document.addEventListener('DOMContentLoaded', () => {
+function initAnimations(){
+  const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>io.observe(el));
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
   initData();
-  checkOldCarts();
   renderProducts();
   renderTestimonials();
   renderFAQ();
-  setTimeout(initAnimations, 100);
+  setTimeout(initAnimations,100);
 });
 </script>
 </body>
