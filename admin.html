@@ -622,21 +622,17 @@
    In production: use proper bcrypt on server side
 ═══════════════════════════════════════════════════ */
 const ADMIN_USER = 'admin';
-// Default password: mubadir2025 (stored as base64 encoded string — NOT plain text)
-// In production: replace with server-side bcrypt hash
-const DEFAULT_PASS_HASH = btoa('mubadir2025');
+const DEFAULT_PASS = 'mubadir2025';
 
-function getPassHash() {
-  return localStorage.getItem('mubadir_admin_pass') || DEFAULT_PASS_HASH;
+function getStoredPass() {
+  return localStorage.getItem('mubadir_admin_pass') || DEFAULT_PASS;
 }
-
-function hashPass(p) { return btoa(p); }
 
 function doLogin() {
   const user = document.getElementById('login-user').value.trim();
   const pass = document.getElementById('login-pass').value;
   const err = document.getElementById('login-error');
-  if (user === ADMIN_USER && hashPass(pass) === getPassHash()) {
+  if (user === ADMIN_USER && pass === getStoredPass()) {
     sessionStorage.setItem('mubadir_auth', '1');
     err.style.display = 'none';
     showAdmin();
@@ -669,7 +665,7 @@ function changePassword() {
   const nw = document.getElementById('pw-new').value;
   const confirm = document.getElementById('pw-confirm').value;
   const msg = document.getElementById('pw-msg');
-  if (hashPass(old) !== getPassHash()) {
+  if (old !== getStoredPass()) {
     msg.style.display = 'block'; msg.style.color = '#EF4444';
     msg.textContent = 'كلمة المرور الحالية غير صحيحة'; return;
   }
@@ -681,7 +677,7 @@ function changePassword() {
     msg.style.display = 'block'; msg.style.color = '#EF4444';
     msg.textContent = 'كلمة المرور الجديدة وتأكيدها لا يتطابقان'; return;
   }
-  localStorage.setItem('mubadir_admin_pass', hashPass(nw));
+  localStorage.setItem('mubadir_admin_pass', nw);
   msg.style.display = 'block'; msg.style.color = '#10B981';
   msg.textContent = '✓ تم تغيير كلمة المرور بنجاح';
 }
