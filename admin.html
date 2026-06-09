@@ -1262,8 +1262,10 @@ function showToast(msg) {
 /* ═══════════════════════════════════════════════════
    INIT
 ═══════════════════════════════════════════════════ */
-initData();
-checkAuth();
+document.addEventListener('DOMContentLoaded', function() {
+  initData();
+  checkAuth();
+});
 </script>
 </body>
 </html>

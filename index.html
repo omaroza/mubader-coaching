@@ -857,6 +857,13 @@
 
 <script>
 const WA_NUM = '96877684008';
+
+function openWA(msg) {
+  const encoded = encodeURIComponent(msg || '');
+  const url = 'https://wa.me/' + WA_NUM + (encoded ? '?text=' + encoded : '');
+  window.open(url, '_blank');
+}
+
 const WA_BASE = 'https://wa.me/' + WA_NUM + '?text=';
 
 const DB = {
@@ -1020,7 +1027,14 @@ function saveAbandonedCart(stage,products,contact={}){
 
 function renderProducts(){
   const products=DB.get('products',DEFAULT_PRODUCTS).filter(p=>p.active).sort((a,b)=>a.order-b.order);
-  document.getElementById('products-grid').innerHTML=products.map(p=>`
+  // Set correct WhatsApp links for each product
+  products.forEach(p => {
+    const waBtn = document.getElementById('wa-' + p.id);
+    if (waBtn) {
+      const msg = 'مرحباً، أرغب في الاستفسار عن خدمة: ' + p.name;
+      waBtn.href = 'https://wa.me/96877684008?text=' + encodeURIComponent(msg);
+    }
+  });
     <div class="product-card ${p.featured?'featured':''} fade-in">
       ${p.badge?`<div class="product-badge">${p.badge}</div>`:''}
       <div class="product-number">0${p.order}</div>
@@ -1036,7 +1050,7 @@ function renderProducts(){
         <div class="product-actions">
           <button class="btn-product-buy" onclick="openOrderForm('${p.id}')">${p.cta}</button>
           <button class="btn-cart-add" onclick="addToCart('${p.id}')">+ السلة</button>
-          <a href="#" target="_blank" class="btn-product-wa" onclick="event.preventDefault();window.open('https://wa.me/96877684008?text='+encodeURIComponent('مرحباً، أرغب في الاستفسار عن خدمة: '+p.name),'_blank')"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://wa.me/96877684008" target="_blank" class="btn-product-wa" id="wa-${p.id}"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
     </div>
