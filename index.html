@@ -59,10 +59,10 @@
     }
     .nav-logo-text { color: var(--white); font-size: 17px; font-weight: 700; }
     .nav-logo-text span { color: var(--gold); }
-    .nav-logo-img-wrap { background: var(--white); border-radius: 8px; padding: 4px 10px; display: flex; align-items: center; }
-    .nav-logo-img { height: 32px; width: auto; display: block; }
-    .footer-logo-img-wrap { background: var(--white); border-radius: 10px; padding: 8px 16px; display: inline-flex; align-items: center; margin-bottom: 14px; }
-    .footer-logo-img { height: 46px; width: auto; display: block; }
+    .nav-logo-img-wrap { background: var(--white); border-radius: 10px; padding: 6px 14px; display: flex; align-items: center; }
+    .nav-logo-img { height: 50px; width: auto; display: block; }
+    .footer-logo-img-wrap { background: var(--white); border-radius: 12px; padding: 12px 22px; display: inline-flex; align-items: center; margin-bottom: 14px; }
+    .footer-logo-img { height: 64px; width: auto; display: block; }
     .nav-links { display: flex; gap: 26px; list-style: none; }
     .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: var(--gold); }
@@ -864,7 +864,6 @@ function renderLogo(){
   const logo = DB.get('siteLogo','');
   if(logo){
     document.getElementById('nav-logo-icon').outerHTML = `<div class="nav-logo-img-wrap"><img src="${logo}" class="nav-logo-img" alt="مبادر كوتشينج" /></div>`;
-    document.getElementById('nav-logo-text').style.display = 'none';
     document.getElementById('footer-logo').outerHTML = `<div class="footer-logo-img-wrap"><img src="${logo}" class="footer-logo-img" alt="مبادر كوتشينج" /></div>`;
   }
 }
