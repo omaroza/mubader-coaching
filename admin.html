@@ -555,24 +555,14 @@
           <button class="btn-sm btn-gold" style="padding:12px 24px;font-size:14px" onclick="saveSettings()">حفظ الإعدادات</button>
         </div>
         <div class="settings-section">
-          <h3>🖼 صورة الكوتش</h3>
-          <div class="form-group">
-            <label class="form-label">رفع صورة شخصية (تظهر في صفحة الهبوط)</label>
-            <input type="file" class="form-input" id="coach-photo-input" accept="image/*" onchange="previewCoachPhoto(event)" />
-          </div>
-          <div id="coach-photo-preview" style="margin-bottom:16px"></div>
-          <button class="btn-sm btn-gold" style="padding:12px 24px;font-size:14px" onclick="saveCoachPhoto()">حفظ الصورة</button>
-          <button class="btn-sm btn-outline" style="padding:12px 24px;font-size:14px;margin-right:8px" onclick="removeCoachPhoto()">حذف الصورة</button>
-        </div>
-        <div class="settings-section">
-          <h3>🏷 شعار مبادر كوتشينج</h3>
-          <div class="form-group">
-            <label class="form-label">رفع الشعار (يظهر في الشريط العلوي والفوتر بصفحة الهبوط)</label>
-            <input type="file" class="form-input" id="logo-input" accept="image/*" onchange="previewLogo(event)" />
-          </div>
-          <div id="logo-preview" style="margin-bottom:16px"></div>
-          <button class="btn-sm btn-gold" style="padding:12px 24px;font-size:14px" onclick="saveLogo()">حفظ الشعار</button>
-          <button class="btn-sm btn-outline" style="padding:12px 24px;font-size:14px;margin-right:8px" onclick="removeLogo()">حذف الشعار</button>
+          <h3>🖼 صورة الكوتش والشعار</h3>
+          <p style="font-size:13px;color:var(--gray-500);line-height:1.8;margin-bottom:0">
+            لتحديث صورتك الشخصية أو شعار مبادر كوتشينج، يتم ذلك برفع ملف جديد بنفس الاسم
+            (<code style="background:var(--gray-100);padding:2px 8px;border-radius:6px">coach.jpg</code>
+            للصورة الشخصية، و
+            <code style="background:var(--gray-100);padding:2px 8px;border-radius:6px">logo.png</code>
+            للشعار) إلى مستودع GitHub، بنفس طريقة رفع ملفات الموقع المعتادة.
+          </p>
         </div>
       </div>
 
@@ -705,79 +695,6 @@ function saveSettings() {
   showToast('تم حفظ الإعدادات ✓');
 }
 
-let pendingCoachPhoto = null;
-
-function previewCoachPhoto(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    pendingCoachPhoto = e.target.result;
-    document.getElementById('coach-photo-preview').innerHTML =
-      `<img src="${pendingCoachPhoto}" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)" />`;
-  };
-  reader.readAsDataURL(file);
-}
-
-function saveCoachPhoto() {
-  if (!pendingCoachPhoto) { showToast('الرجاء اختيار صورة أولاً'); return; }
-  DB.set('coachPhoto', pendingCoachPhoto);
-  showToast('تم حفظ صورة الكوتش ✓ ستظهر في صفحة الهبوط');
-}
-
-function removeCoachPhoto() {
-  DB.set('coachPhoto', '');
-  pendingCoachPhoto = null;
-  document.getElementById('coach-photo-preview').innerHTML = '';
-  document.getElementById('coach-photo-input').value = '';
-  showToast('تم حذف الصورة');
-}
-
-function loadCoachPhotoPreview() {
-  const photo = DB.get('coachPhoto', '');
-  if (photo) {
-    document.getElementById('coach-photo-preview').innerHTML =
-      `<img src="${photo}" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)" />`;
-  }
-  loadLogoPreview();
-}
-
-let pendingLogo = null;
-
-function previewLogo(event) {
-  const file = event.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    pendingLogo = e.target.result;
-    document.getElementById('logo-preview').innerHTML =
-      `<img src="${pendingLogo}" style="height:60px;width:auto;background:var(--navy);padding:8px 14px;border-radius:8px" />`;
-  };
-  reader.readAsDataURL(file);
-}
-
-function saveLogo() {
-  if (!pendingLogo) { showToast('الرجاء اختيار صورة الشعار أولاً'); return; }
-  DB.set('siteLogo', pendingLogo);
-  showToast('تم حفظ الشعار ✓ سيظهر في صفحة الهبوط');
-}
-
-function removeLogo() {
-  DB.set('siteLogo', '');
-  pendingLogo = null;
-  document.getElementById('logo-preview').innerHTML = '';
-  document.getElementById('logo-input').value = '';
-  showToast('تم حذف الشعار');
-}
-
-function loadLogoPreview() {
-  const logo = DB.get('siteLogo', '');
-  if (logo) {
-    document.getElementById('logo-preview').innerHTML =
-      `<img src="${logo}" style="height:60px;width:auto;background:var(--navy);padding:8px 14px;border-radius:8px" />`;
-  }
-}
-
 /* ═══════════════════════════════════════════════════
    DB HELPERS
 ═══════════════════════════════════════════════════ */
@@ -835,7 +752,7 @@ function showPage(id) {
   if (id === 'products') renderProductsAdmin();
   if (id === 'testimonials') renderTestimonialsAdmin();
   if (id === 'faqs') renderFaqsAdmin();
-  if (id === 'settings') loadCoachPhotoPreview();
+  if (id === 'settings') { /* no-op: photo/logo handled via file upload to GitHub */ }
 }
 
 /* ═══════════════════════════════════════════════════

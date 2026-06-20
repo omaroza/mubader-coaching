@@ -493,8 +493,7 @@
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-visual { order: -1; }
-      .coach-photo-wrap { width: 180px; height: 180px; }
+      .coach-photo-wrap { width: 150px; height: 150px; }
       .nav-links { display: none; }
       .method-step:not(:last-child)::after { display: none; }
       .sticky-bar { display: flex; }
@@ -520,9 +519,9 @@
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="#" class="nav-logo" id="nav-logo-link">
-    <div class="nav-logo-icon" id="nav-logo-icon">م</div>
-    <span class="nav-logo-text" id="nav-logo-text">مبادر <span>كوتشينج</span></span>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-img-wrap"><img src="logo.png" class="nav-logo-img" alt="مبادر كوتشينج" onerror="this.parentElement.outerHTML='<div class=\'nav-logo-icon\'>م</div>'" /></div>
+    <span class="nav-logo-text">مبادر <span>كوتشينج</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="#workshop">الورشة</a></li>
@@ -572,7 +571,7 @@
       <div class="coach-photo-wrap">
         <div class="coach-photo-ring"></div>
         <div class="coach-photo" id="coach-photo">
-          صورة الكوتش عمر<br>(سيتم إضافتها لاحقاً)
+          <img src="coach.jpg" alt="الكوتش عمر المرزوقي" onerror="this.parentElement.innerHTML='صورة الكوتش عمر'" />
         </div>
       </div>
       <div class="coach-badge">مدرب الورشة</div>
@@ -712,7 +711,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo" id="footer-logo">مبادر <span>كوتشينج</span></div>
+  <div class="footer-logo-img-wrap"><img src="logo.png" class="footer-logo-img" alt="مبادر كوتشينج" onerror="this.parentElement.outerHTML='<div class=\'footer-logo\'>مبادر <span>كوتشينج</span></div>'" /></div>
   <div class="footer-slogan">كل إنسان بداخله مشروع ينتظر قراراً</div>
   <div class="footer-links">
     <a href="#workshop">الورشة</a>
@@ -799,8 +798,6 @@ function initData(){
   if(!DB.get('faqs',null)) DB.set('faqs',DEFAULT_FAQS);
   if(!DB.get('orders',null)) DB.set('orders',[]);
   if(!DB.get('carts',null)) DB.set('carts',[]);
-  if(!DB.get('coachPhoto',null)) DB.set('coachPhoto','');
-  if(!DB.get('siteLogo',null)) DB.set('siteLogo','');
 }
 
 let currentCartId = null;
@@ -850,21 +847,6 @@ function renderWorkshopCard(){
   const first = products[0];
   if(first){
     document.getElementById('sticky-price').innerHTML = `${first.price} ${first.currency}<small>سعر الورشة</small>`;
-  }
-}
-
-function renderCoachPhoto(){
-  const photo = DB.get('coachPhoto','');
-  if(photo){
-    document.getElementById('coach-photo').innerHTML = `<img src="${photo}" alt="الكوتش عمر المرزوقي" />`;
-  }
-}
-
-function renderLogo(){
-  const logo = DB.get('siteLogo','');
-  if(logo){
-    document.getElementById('nav-logo-icon').outerHTML = `<div class="nav-logo-img-wrap"><img src="${logo}" class="nav-logo-img" alt="مبادر كوتشينج" /></div>`;
-    document.getElementById('footer-logo').outerHTML = `<div class="footer-logo-img-wrap"><img src="${logo}" class="footer-logo-img" alt="مبادر كوتشينج" /></div>`;
   }
 }
 
@@ -971,8 +953,6 @@ function initAnimations(){
 document.addEventListener('DOMContentLoaded',()=>{
   initData();
   renderWorkshopCard();
-  renderCoachPhoto();
-  renderLogo();
   renderTestimonials();
   renderFAQ();
   setTimeout(initAnimations,100);
